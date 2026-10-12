@@ -1,0 +1,4 @@
+candidate,reference,seed,AP,reference_AP,dataset,schedule,checkpoint_rule,evaluator,evidence_role
+B,A,11,0.51,0.50,synthetic_three_pairs,no_training,not_applicable,mock_AP_values,teaching_only
+B,A,22,0.515,0.52,synthetic_three_pairs,no_training,not_applicable,mock_AP_values,teaching_only
+B,A,33,0.49,0.48,synthetic_three_pairs,no_training,not_applicable,mock_AP_values,teaching_only

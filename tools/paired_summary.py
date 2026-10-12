@@ -15,6 +15,21 @@ CONTRACT_FIELDS = (
 REQUIRED = {"candidate", "reference", "seed", "AP", "reference_AP", *CONTRACT_FIELDS}
 
 
+def read_rows(path):
+    """Reject malformed CSV structure instead of silently overwriting columns."""
+    with Path(path).open(encoding="utf-8-sig", newline="") as handle:
+        reader = csv.reader(handle)
+        header = next(reader, [])
+        if len(set(header)) != len(header) or not REQUIRED.issubset(header):
+            raise ValueError("CSV requires unique headers and all documented columns")
+        rows = []
+        for number, values in enumerate(reader, start=2):
+            if len(values) != len(header):
+                raise ValueError(f"CSV row {number} has an unexpected number of columns")
+            rows.append(dict(zip(header, values)))
+        return rows
+
+
 def summarize(rows):
     """AP inputs are fractions in [0, 1]; differences are percentage points.
 
@@ -80,8 +95,7 @@ def main():
     parser.add_argument("csv_path", type=Path)
     args = parser.parse_args()
     try:
-        with args.csv_path.open(encoding="utf-8-sig", newline="") as handle:
-            result = summarize(csv.DictReader(handle))
+        result = summarize(read_rows(args.csv_path))
     except (OSError, ValueError) as error:
         parser.exit(2, f"Input error: {error}\n")
     print(json.dumps(result, indent=2, ensure_ascii=False, allow_nan=False))

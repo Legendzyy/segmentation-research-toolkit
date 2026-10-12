@@ -4,6 +4,7 @@ import argparse
 import hashlib
 import json
 import os
+import tempfile
 from pathlib import Path, PurePosixPath
 
 
@@ -88,14 +89,55 @@ def verify(root, manifest):
             "scope": "allowed_text_only_not_all_research_assets"}
 
 
+def refresh(root, manifest):
+    """Explicitly accept a changed inventory, keeping the previous bytes locally.
+
+    This is not a secrecy review or a scientific approval. Never call from CI.
+    """
+    root = Path(root).resolve(strict=True)
+    manifest = Path(manifest)
+    if manifest.is_symlink():
+        raise ValueError("Linked manifest files are not supported")
+    difference = verify(root, manifest)
+    if difference["status"] == "PASS":
+        return {"status": "UNCHANGED", "difference": difference}
+    original = manifest.read_bytes()
+    old_hash = hashlib.sha256(original).hexdigest()
+    result = {"schema": SCHEMA, "scope": "allowed_text_only_not_all_research_assets",
+              "files": inventory(root, exclude=manifest)}
+    backup_dir = root / "work" / "manifest_history"
+    # Do not redirect the local backup through a link or junction.
+    if backup_dir.resolve() != backup_dir:
+        raise ValueError("Manifest backup directory must not be linked")
+    backup_dir.mkdir(parents=True, exist_ok=True)
+    backup = backup_dir / f"{old_hash}.json"
+    if backup.exists():
+        if backup.read_bytes() != original:
+            raise ValueError("Existing backup content does not match its hash")
+    else:
+        with backup.open("xb") as handle:
+            handle.write(original)
+    fd, temporary_name = tempfile.mkstemp(prefix=".manifest-", suffix=".tmp", dir=manifest.parent)
+    temporary = Path(temporary_name)
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8", newline="\n") as handle:
+            json.dump(result, handle, indent=2, ensure_ascii=False, allow_nan=False)
+            handle.write("\n")
+        os.replace(temporary, manifest)
+    finally:
+        temporary.unlink(missing_ok=True)
+    return {"status": "REFRESHED", "previous_sha256": old_hash,
+            "backup": backup.relative_to(root).as_posix(), "difference": difference}
+
+
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("operation", choices=("create", "verify"))
+    parser.add_argument("operation", choices=("create", "verify", "refresh"))
     parser.add_argument("root", type=Path)
     parser.add_argument("manifest", type=Path)
     args = parser.parse_args()
     try:
-        result = (create if args.operation == "create" else verify)(args.root, args.manifest)
+        result = {"create": create, "verify": verify, "refresh": refresh}[args.operation](args.root, args.manifest)
     except (OSError, ValueError, UnicodeError) as error:
         parser.exit(2, f"Manifest error: {error}\n")
     print(json.dumps(result, ensure_ascii=False, indent=2))
