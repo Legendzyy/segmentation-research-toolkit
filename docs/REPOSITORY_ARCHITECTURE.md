@@ -1,57 +1,22 @@
-# 可复用科研仓库架构
+# 沿用原生阶段架构
 
-目录表达的是研究角色，而不是按脚本数量堆积功能。将离线诊断、可训练方法、评价器与阶段证据分开，可以减少“旧脚本导入新配置”或“开发结果覆盖确认结果”的风险。
+这里整理原项目已经采用的组织方式。公开版没有新增阶段生成器，也不要求把各阶段文件改成同一种模板。
 
-需要可直接执行的步骤时，从 [从零开始指南](START_HERE.md) 进入。`python tools/new_stage.py diagnostics pilot01` 会按下面的布局生成空阶段；[完整教学示例](../examples/synthetic_study/README.md) 示范怎样填写，不包含模型训练。
+原项目用 `diagnostics/` 放离线诊断与机制归因，用 `engineering/` 放围绕问题开展的训练和方法迭代。两者不是严格流水线：诊断可以为工程设计提供依据，工程结果也会推动下一轮诊断。阶段独立保存自己当时的定义和结论，下一阶段引用历史结果而不回写。
 
-## 根目录与阶段目录
+| 要解决的协作问题 | 原生文件/目录 | 可直接参考的原件 |
+|---|---|---|
+| 现在研究什么、什么已经完成 | README、最终报告 | [ENG04 README](../engineering/eng04_problem_led_quality_transfer/README.md) |
+| 问题、预算和比较方式怎样约定 | PROTOCOL、RESEARCH_CHARTER、ENGINEERING_CONTRACT | [ENG01 契约](../engineering/eng01_semantic_detail_boundary/ENGINEERING_CONTRACT.md) |
+| 模块的具体计算是什么 | METHOD_SPEC、IMPLEMENTATION_CONTRACT | [ENG03 方法](../engineering/eng03_instance_quality_transfer/METHOD_SPEC.md) |
+| 实验用什么数值配置 | configs/ 中的分版 JSON | [ENG04 确认配置](../engineering/eng04_problem_led_quality_transfer/configs/CONFIRM_J0_V1.json) |
+| 一轮实验后为什么继续/调整 | analysis/ 下的决策文件 | [ENG03 第二轮决策](../engineering/eng03_instance_quality_transfer/analysis/DEVELOPMENT_V2_DECISION.md) |
+| 数值和图怎样集中对照 | results/、RESULTS_MASTER、配对表 | [ENG01 矩阵](../engineering/eng01_semantic_detail_boundary/results/SEED42_MATRIX.csv) |
+| 什么实际执行了，遇到什么错误 | EXECUTION_JOURNAL | [P1F 日志](../diagnostics/p1f_thin_prototype_attribution/EXECUTION_JOURNAL_P1F.md) |
+| 最后能写什么、证据缺什么 | paper/、FINAL_REPORT | [ENG04 claim 对照](../engineering/eng04_problem_led_quality_transfer/paper/CLAIM_EVIDENCE.md) |
 
-根目录保存跨阶段规则与进度。`diagnostics/` 容纳固定预测或冻结模型上的问题诊断；`engineering/` 容纳有训练、适配或部署变化的阶段。共享代码放 `src/`，避免让后续阶段通过 `sys.path` 导入某个旧阶段的运行脚本。
+开始自己的研究时，选择最相近的阶段作参照，在自己的新目录里写下场景、baseline、benchmark、候选设计和对照矩阵。沿用这些文件的职责，重新确定自己的配置和协议；把未运行的结果留空，不复制历史数值或 FROZEN 状态充当自己的结果。
 
-每个正式阶段采用下面的结构：
+原项目还使用 `src/`、运行队列、`runs/`、权重、评价缓存、样本 manifest 和数据接口。它们在本次公开版中**没有迁移**，因此这里只提供研究组织结构与文档资产。要训练，需要另接自己的训练器、数据接口、环境和评价实现，并完成同协议 baseline；原文命令只说明历史执行方式。
 
-```text
-<stage_id>/
-  README.md              # 目标、状态、入口、不可越过的边界
-  PROTOCOL.md            # 科学定义、对照、端点、统计及决策规则
-  config.json            # 机器可读配置，冻结时生成哈希
-  EXPERIMENT_LOG.md       # 包含失败的追加日志
-  DECISIONS.md            # 改动理由、证据、科学含义是否变化
-  src/                   # 阶段专属实现，稳定后才移入共享代码
-  results/               # 小型聚合表与裁决，按需公开
-  artifacts/             # 本地运行资产，不进入公开模板
-    runs/<attempt_id>/   # 每次启动独立目录
-    manifests/           # 数据/配置/源码身份
-    predictions/         # 固定评价输出
-    audits/              # 数值契约与 replay
-    failures/            # 保留失败尝试及原因
-```
-
-`results/` 不是自动公开目录，仍需要内容审查。目录名称不能代替数据访问控制。
-
-## 一个 attempt 至少留下什么
-
-记录确切参数数组、工作目录、UTC 时间、seed、Python/依赖版本、代码版本与未提交改动、配置哈希、输入身份、退出码和输出索引。命令行可能包含秘密，不要将 token 放进参数，也不要把未检查的完整日志推送到 GitHub。
-
-成功启动不等于成功训练，成功训练不等于科学门槛通过。建议分别记录：
-
-| 状态 | 含义 |
-|---|---|
-| `execution_status` | 程序是否完成、退出码是什么 |
-| `integrity_status` | 输入、输出、哈希与数量是否闭合 |
-| `numerical_status` | 核心数值和 native replay 是否通过 |
-| `scientific_decision` | 预定假设和比较是否被证据支持 |
-
-例如一个完整负结果可以同时是 execution PASS、integrity PASS、scientific STOP。不要把 STOP 当成必须重新跑到正结果的故障。
-
-## 从本模板接入真实实验
-
-1. 在 `src/` 实现数据适配、模型构建、训练和独立评价接口；显式传递配置，不在 import 时加载数据或模型。
-2. 复制协议与配置模板到新阶段，填写所有 `null` 项和预先定义的 endpoint。
-3. 固定样本身份、split 角色、seed 和 checkpoint 选择规则；将敏感 manifest 保留本地。
-4. 先以合成数据或获准 train 数据检查 shape、梯度、空集、序列化与关闭模块 parity。
-5. 冻结后启动开发实验；修订创建新配置与 attempt，不覆盖旧状态。
-6. 开发完成后冻结确认比较；确认与最终数据的具体访问单独记录。
-7. 发布时新建导出目录，只复制白名单内容。不要把整个研究目录 `git add .`。
-
-本模板没有自带阶段执行器；状态表是组织契约，不是自动执行的安全屏障。接入时需要实际实现验证和权限检查。
+阅读历史文件时保留两点上下文：P1E/P1F 原目录曾继承前阶段文件，本次只收录对应阶段主件（带 `_P1E` / `_P1F` 后缀）；阶段报告中的源码 hash、权重 hash 和数据 manifest hash 是历史身份记录，不表示相关资产已附包，或可以从 hash 恢复文件。

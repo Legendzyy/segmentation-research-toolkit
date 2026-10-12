@@ -1,0 +1,22 @@
+{
+  "experiment_id": "EXP-SIS-ENG03",
+  "package": "direct_output_plus_feature_MSE_additive_control",
+  "status": "FROZEN_BEFORE_FORMAL_F0",
+  "decision_evidence": "analysis/STRONG_CONTROL_V1_DECISION.md",
+  "variant": "F0",
+  "seed": 2024,
+  "epochs": 60,
+  "microbatch": 8,
+  "imgsz": 640,
+  "checkpoint_policy": "last scheduled epoch60",
+  "student_yaml": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/configs/yolo11n-eng02.yaml",
+  "student_initialization": "${RESEARCH_ROOT}/diagnostics/p1d_engineering_qualification/weights/yolo11n-seg.pt",
+  "teacher_checkpoint": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/runs/A2_s42/weights/last.pt",
+  "output_KD": {"mode": "direct", "lambda_cls": 1.0, "lambda_box": 5.0, "lambda_mask": 1.0},
+  "feature_KD": {"layers": [16, 19, 22], "reduction": "mean_channel_then_mean_spatial_then_mean_layers", "lambda_fd": 1.0, "adapter": "K1_three_1x1_bias_convs", "adapter_seed": 102024},
+  "scientific_role": "simple additive complementarity control, not a novel mechanism claim",
+  "comparison": "paired seed2024 F0 versus frozen D0, K1, N0 on Blueberry full254 input640",
+  "native_training_recipe": "exact ENG03 D0 input640 AdamW batch8/nbs32, same augmentation/warmup/cosine settings, full-network 60epoch, last checkpoint",
+  "preflight": "analysis/NUMERIC_AUDIT_F0.json PASS; one-epoch/four-train-image smoke_F0_s2024 exited0; smoke automatic validation ignored",
+  "test_access": false
+}

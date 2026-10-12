@@ -1,0 +1,16 @@
+> **原生研究记录**：保留当时的方法、数值与判断；只适配路径和链接。历史命令及未收录依赖不能直接运行，草案/计划不等于已执行结果。见 [发布说明](../../../docs/PROVENANCE.md)。
+
+# Seed128 matched native control and branch decision
+
+2026-09-27. N0_s128 completed the frozen native 60-epoch recipe from initial weights with a PASS receipt. The scheduled last checkpoint passed the independent Blueberry development full254/1803-GT input640 evaluator. D0_s128 was previously completed and evaluated under the same student, seed, training budget, selection rule and evaluator. Machine-readable AP, fixed score-.25 coverage and common-GT shape are in `N0_S128_PAIRED_EVALUATION.json`; GT-level rows are in `n0_s128_instance_evidence.csv`.
+
+| Seed | Native N0 mask AP | Output-KD D0 mask AP | D0−N0 AP (pp) | D0−N0 AP75 (pp) | D0−N0 AP90 (pp) | D0−N0 small AP (pp) |
+|---:|---:|---:|---:|---:|---:|---:|
+| 128 | .840163 | .839156 | **−.1007** | +.6494 | −1.1638 | +.2090 |
+| 2024 | .842095 | .844379 | **+.2284** | +.1919 | +.1380 | −.6098 |
+
+The descriptive two-seed mean D0−N0 overall AP is +.0639 pp, with opposite signs. Neither seed is a held-out final confirmation: seed2024 motivated this follow-up, and seed128 was then inspected for this registered resource decision. With only two matched seeds, no stable overall advantage is established. Seed128 D0 covers 1727 versus N0's 1715 GT under a **fixed score-.25 same-class box** diagnostic (+12), and among 1700 aligned common GT it has +.000695 mean mask IoU and +.000675 boundary F. These conditional gains coexist with lower overall AP and −1.1638 pp AP90; candidate ranking, score distribution and high-IoU mask outcomes can change AP, but this table does not identify a unique causal mechanism or decompose AP. On 106 aligned small GT, D0 mean IoU is +.004706; this does not imply a reliable small-AP gain across seeds.
+
+The pre-recorded `F0_S2024_DECISION.md` gate required D0−N0 overall AP ≥+.10 pp, at least one of AP75/AP90 positive, and small AP ≥−1.0 pp. Seed128 **fails the primary AP condition**. The gate is a scheduling rule, not a significance test. **Do not start K1_s128 or another D0/native seed to rescue this contrast.** K1_s2024 was the single matched feature-KD control, and historical K1_s42 has a different training provenance; neither establishes a multi-seed superiority claim. M0's promising seed42 small-AP signal reversed on seed128, Q0/C0 did not improve full AP, ranked-anchor R0 was negative, and simple additive F0 lowered AP by .3751 pp versus D0. These distinct attempted mechanisms and paired contrasts make further training in this exact supervision family low-information relative to its cost.
+
+**Stage decision: PAUSE-B / NO-SUPPORTED-METHOD-AFTER-BOUNDED-DEVELOPMENT.** This is a conclusion about the present ENG03 designs and Blueberry development protocol, not a universal negative claim about instance-conditioned transfer. No faithful CrossKD/GID-style mature adaptation, MinneApple development run or isolated latency certification was performed; those cannot be presented as failed controls. The research problem of converting teacher instance quality into complete-prediction gain remains open. Preserve every positive and negative checkpoint/receipt, including the two interrupted attempts. No test access.

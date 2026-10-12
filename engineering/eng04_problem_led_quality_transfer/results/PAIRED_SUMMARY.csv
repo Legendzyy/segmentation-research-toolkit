@@ -1,0 +1,15 @@
+candidate,reference,metric,n,mean_pp,sample_sd_pp,min_pp,max_pp,inference
+D0,N0,AP,2,0.06387645054444224,0.23268517523720925,-0.10065681474736854,0.22840971583625302,n=2 descriptive; no significance or teacher-seed replication claim
+D0,N0,AP50,2,0.11997443118507145,0.08691397648181194,0.05851696903489412,0.18143189333524878,n=2 descriptive; no significance or teacher-seed replication claim
+D0,N0,AP75,2,0.4206510271052455,0.32350443675920143,0.19189884612887953,0.6494032080816114,n=2 descriptive; no significance or teacher-seed replication claim
+D0,N0,AP90,2,-0.5128629249658956,0.9205265936829744,-1.1637735216216805,0.1380476716898893,n=2 descriptive; no significance or teacher-seed replication claim
+D0,N0,AP_small_input640,2,-0.20039916245679912,0.5789480578442707,-0.6097772601132645,0.20897893519966626,n=2 descriptive; no significance or teacher-seed replication claim
+D0,N0,AP_medium_input640,2,-0.01940424650028194,0.1832680647664547,-0.14899433787157745,0.11018584487101357,n=2 descriptive; no significance or teacher-seed replication claim
+D0,N0,AP_large_input640,2,0.07890022619727044,0.3219864450634117,-0.14877857255721771,0.3065790249517586,n=2 descriptive; no significance or teacher-seed replication claim
+M0,D0,AP,2,0.025601034523847765,0.05399583527828701,-0.012579786757260791,0.06378185580495632,n=2 descriptive; no significance or teacher-seed replication claim
+M0,D0,AP50,2,0.09527376808144972,0.06931987501536689,0.04625721438707986,0.14429032177581957,n=2 descriptive; no significance or teacher-seed replication claim
+M0,D0,AP75,2,-0.5543102190017191,0.15738276208817237,-0.6655966373161348,-0.4430238006873033,n=2 descriptive; no significance or teacher-seed replication claim
+M0,D0,AP90,2,0.7183574667782133,0.19115898600717834,0.5831876514877932,0.8535272820686335,n=2 descriptive; no significance or teacher-seed replication claim
+M0,D0,AP_small_input640,2,0.7756317794082312,1.4900409041956861,-0.2779862481938733,1.8292498070103358,n=2 descriptive; no significance or teacher-seed replication claim
+M0,D0,AP_medium_input640,2,0.05669757196352099,0.06491434543599663,0.010796198109441768,0.1025989458176002,n=2 descriptive; no significance or teacher-seed replication claim
+M0,D0,AP_large_input640,2,0.10724245637873664,0.07838930109974386,0.05181284999863367,0.1626720627588396,n=2 descriptive; no significance or teacher-seed replication claim

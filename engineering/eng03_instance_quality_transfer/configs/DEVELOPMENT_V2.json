@@ -1,0 +1,24 @@
+{
+  "experiment_id": "EXP-SIS-ENG03",
+  "package": "output_KD_gate_factorial_v2",
+  "status": "FROZEN_BEFORE_FORMAL_V2",
+  "decision_evidence": "analysis/DEVELOPMENT_V1_DECISION.md",
+  "teacher_checkpoint": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/runs/A2_s42/weights/last.pt",
+  "student_initialization": "${RESEARCH_ROOT}/diagnostics/p1d_engineering_qualification/weights/yolo11n-seg.pt",
+  "epochs": 60,
+  "microbatch": 8,
+  "checkpoint_policy": "last scheduled epoch for both variants",
+  "native_recipe": "ENG02 K1/K2 640/AdamW family, identical to DEVELOPMENT_V1",
+  "variants": {
+    "M0": {"mode": "mask_selective", "lambda_cls": 1.0, "lambda_box": 5.0, "lambda_mask": 1.0},
+    "C0": {"mode": "det_selective", "lambda_cls": 1.0, "lambda_box": 5.0, "lambda_mask": 1.0}
+  },
+  "factorial": {
+    "D0_completed": "direct detector, direct mask",
+    "M0": "direct detector, selective mask",
+    "C0": "selective detector, direct mask",
+    "Q0_completed": "selective detector, selective mask"
+  },
+  "selection_note": "The two missing cells isolate which task gate drives Q0's mixed AP/AP90/small/coverage trade-off. No threshold, loss weight, total budget or checkpoint rule changed after viewing v1 val.",
+  "test_access": false
+}

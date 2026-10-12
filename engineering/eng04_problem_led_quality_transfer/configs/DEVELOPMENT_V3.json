@@ -1,0 +1,35 @@
+{
+  "experiment_id": "EXP-SIS-20260927-ENG04",
+  "status": "FROZEN_BEFORE_FORMAL_TRAINING",
+  "decision_evidence": "analysis/I1_S42_DECISION.md",
+  "order": ["J0"],
+  "seed": 42,
+  "epochs": 60,
+  "batch": 8,
+  "input": 640,
+  "variants": {
+    "J0": {
+      "mode": "same_anchor_D0_detection_plus_GT_linked_I1_quality_mask",
+      "kd_multiplier": 1.0,
+      "detection_source": "D0 student TAL GT-positive same-location teacher true-class BCE and decoded box SmoothL1, per-GT denominator",
+      "lambda_D0_cls": 1.0,
+      "lambda_D0_box": 5.0,
+      "mask_source": "I1 teacher-own TAL same-GT best decoded box IoU, qualified teacher class and box IoU>.5; mask target via teacher coefficient/prototype on nearest student GT-center TAL positive",
+      "lambda_I1_mask": 1.0,
+      "mask_quality_weight": "teacher mask IoU * sigmoid((teacher mask IoU - detached student mask IoU)/.05), teacher mask IoU>.5",
+      "mask_denominator": "all student-positive GT; missing or unqualified teacher => zero transfer but native GT remains"
+    }
+  },
+  "KD_warmup": "multiplier * min(1,(epoch+1)/3)",
+  "initial_weights": "P1D weights/yolo11n-seg.pt, same as D0/I1/N0 seed42",
+  "teacher_checkpoint": "ENG02 runs/A2_s42/weights/last.pt, same as D0/I1",
+  "training_recipe": "same ENG04 60epoch input640 AdamW/b8/nbs32 augmentation/data view/last scheduled checkpoint",
+  "single_scientific_design": "Task route: same-location teacher detection to maintain ranking/coverage, GT-linked qualified teacher mask to test complementary geometry; no feature MSE or inference module",
+  "primary": "Blueberry development full254 mask AP .50:.95 maxDet300",
+  "controls": ["ENG04 N0_s42 native", "ENG03 D0_s42 historical recipe-matched seed42", "ENG04 I1_s42", "ENG04 I0_s42", "ENG04 X0_s42"],
+  "interpretation": "A seed42 positive is development only. Compare complete AP and candidate ranking and common-GT shape; no post-hoc checkpoint or endpoint selection. If complete AP does not credibly improve over strong D0, report tradeoff and avoid claiming a supported method.",
+  "development_unit_charge": 1,
+  "remaining_validation_unit_reserve": 10,
+  "GPU": "shared, nonisolated",
+  "test_access": false
+}

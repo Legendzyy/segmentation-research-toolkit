@@ -1,0 +1,20 @@
+{
+  "experiment_id": "EXP-SIS-20260927-ENG04",
+  "status": "FROZEN_BEFORE_FORMAL_NATIVE_CONTROL",
+  "decision_evidence": "analysis/FIRST_BATCH_DECISION.md",
+  "variant": "N0",
+  "seed": 42,
+  "epochs": 60,
+  "batch": 8,
+  "input": 640,
+  "student_yaml": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/configs/yolo11n-eng02.yaml",
+  "student_initialization": "${RESEARCH_ROOT}/diagnostics/p1d_engineering_qualification/weights/yolo11n-seg.pt",
+  "recipe": "Same ENG03/ENG04 60epoch input640 AdamW/b8/nbs32 augmentations, data view and scheduled last; native GT loss only",
+  "reference_role": "matched native seed42 for X0_s42 and I0_s42",
+  "primary": "Blueberry full254 mask AP .50:.95",
+  "secondary": ["AP50", "AP75", "AP90", "small/medium/large AP", "full-queue ranking", "coverage", "common-GT shape"],
+  "training_unit_charge": 1,
+  "development_units_after_completion_approx": 3.000075,
+  "GPU": "shared, nonisolated",
+  "test_access": false
+}

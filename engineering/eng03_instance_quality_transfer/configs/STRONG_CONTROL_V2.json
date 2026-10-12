@@ -1,0 +1,26 @@
+{
+  "experiment_id": "EXP-SIS-ENG03",
+  "package": "matched_native_seed128_resource_gate",
+  "status": "FROZEN_BEFORE_FORMAL_CONTROL",
+  "decision_evidence": "analysis/F0_S2024_DECISION.md",
+  "seed": 128,
+  "order": ["N0_s128"],
+  "epochs": 60,
+  "microbatch": 8,
+  "imgsz": 640,
+  "checkpoint_policy": "last scheduled epoch 60",
+  "student_yaml": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/configs/yolo11n-eng02.yaml",
+  "student_initialization": "${RESEARCH_ROOT}/diagnostics/p1d_engineering_qualification/weights/yolo11n-seg.pt",
+  "teacher_checkpoint": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/runs/A2_s42/weights/last.pt",
+  "K1_source_implementation": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/src/kd_model.py; read-only import, unused by N0",
+  "variants": {
+    "N0": {"mode": "native_no_KD"},
+    "K1": {"mode": "vanilla_feature_MSE", "lambda_fd": 1.0, "neck_layers": [16, 19, 22], "training_only_adapters": "three 1x1 convolutions"}
+  },
+  "recipe": "Exact STRONG_CONTROL_V1 N0 full-network 60epoch input640 AdamW/batch8/nbs32/augmentation/last; only seed changes to 128",
+  "primary_comparison": "Within seed128, D0_s128 versus N0_s128 on independent Blueberry full254 mask AP",
+  "secondary": ["AP75", "AP90", "small AP", "coverage", "common-GT shape"],
+  "adaptive_policy": "Do not start K1_s128 unless the pre-recorded analysis/F0_S2024_DECISION.md resource gate passes; this is not a significance threshold",
+  "training_budget_units_added": 1,
+  "test_access": false
+}

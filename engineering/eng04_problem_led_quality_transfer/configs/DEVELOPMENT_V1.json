@@ -1,0 +1,55 @@
+{
+  "experiment_id": "EXP-SIS-20260927-ENG04",
+  "status": "FROZEN_BEFORE_FORMAL_TRAINING",
+  "seed": 42,
+  "order": [
+    "X0",
+    "I0"
+  ],
+  "epochs": 60,
+  "batch": 8,
+  "input": 640,
+  "recipe": "ENG03 60epoch AdamW b8 nbs32 native recipe, identical augmentations, last scheduled checkpoint",
+  "variants": {
+    "X0": {
+      "mode": "CrossKD_head_input_YOLO_adaptation",
+      "kd_multiplier": 0.25,
+      "QFL_beta": 1,
+      "DFL_KL_T": 1,
+      "DFL_weight": 4,
+      "head_reuse_index": 0,
+      "class_normalizer": "student TAL positive count clamped1",
+      "feature_alignment": "1x1 adapter plus per-channel mean/std alignment",
+      "mask": "native only",
+      "empty_GT_batch": "native only"
+    },
+    "I0": {
+      "mode": "GT_linked_task_quality_transfer",
+      "kd_multiplier": 1.0,
+      "lambda_cls": 1.0,
+      "lambda_decoded_box": 5.0,
+      "lambda_mask": 1.0,
+      "teacher_candidate": "teacher-own TAL same-GT anchor with max decoded box IoU; stable lowest-index tie",
+      "qualification": "teacher class argmax equals GT and teacher box IoU>.5",
+      "student_mask_anchor": "nearest GT center among student own TAL positives",
+      "task_weight": "teacher quality * sigmoid((teacher quality - detached student quality)/.05)",
+      "mask_quality_floor": 0.5,
+      "denominator": "all student-positive GT; no selected-set renormalization",
+      "missing_teacher": "skip transfer, preserve native"
+    }
+  },
+  "KD_warmup": "multiplier * min(1,(epoch+1)/3)",
+  "calibration": "first2 train images only; X0 raw KD/native student gradient L2 ratio3.997 -> .25 multiplier; I0 native weights unchanged, raw ratio .0582; no validation-based choice",
+  "primary": "full254 input640 mask AP .50:.95 maxDet300",
+  "test_access": false,
+  "GPU": "shared, nonisolated",
+  "development_units_reserved_for_this_queue": 2,
+  "remaining_validation_reserve": 10,
+  "total_limits": {
+    "units": 18,
+    "training_process_hours": 72,
+    "new_storage_GiB": 12,
+    "minimum_free_GiB": 8
+  },
+  "first_queue_endpoint": "X0 and I0 last full254 evaluations plus comparison; analysis required before any further model"
+}

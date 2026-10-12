@@ -1,0 +1,78 @@
+{
+  "experiment_id": "EXP-SIS-20260924-ENG02",
+  "status": "FROZEN",
+  "stage": "A native headroom screening",
+  "source_commit": "b454f423600f99d41730bd75a7a26b491187de36",
+  "data_manifest_sha256": "35e4e462f3bd6968e75f6f04a76422259b19475b7525b9a96bc6f1b48891b602",
+  "local_data_view_sha256": "bc6a63b84956ffea324475ab8fec16387370f9322b501667c14573deefbdf9f0",
+  "A0": {
+    "reused": true,
+    "source": "ENG01 E0_s42",
+    "checkpoint": "${RESEARCH_ROOT}\\engineering\\eng01_semantic_detail_boundary\\runs\\E0_s42\\weights\\last.pt",
+    "checkpoint_sha256": "32cc975a91e2f1e1357da2a1d62d6052aba20ec4289f4489fb5e8b81242cff3b",
+    "evaluator_parity": "EXACT",
+    "AP": 0.8409035371313615
+  },
+  "variants": {
+    "A1": {
+      "scale": "n",
+      "imgsz": 896,
+      "microbatch": 8,
+      "nbs": 32,
+      "epochs": 60,
+      "source_yaml_sha256": "5d42fcc55cc2feb837198c17e57c5d54f7d3781db78faa15e0d029842f9633a7",
+      "initialization_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152"
+    },
+    "A2": {
+      "scale": "s",
+      "imgsz": 640,
+      "microbatch": 8,
+      "nbs": 32,
+      "epochs": 60,
+      "source_yaml_sha256": "7987ed89c3fdb141378564be3066a35eb4050ef707edf4f18c8b82fed0dc7b08",
+      "initialization_sha256": "1caa81c0195412efa411b632bcfb8c184939dddb6ae41f6a80c41b211ff257c3"
+    }
+  },
+  "recipe": {
+    "optimizer": "AdamW",
+    "lr0": 0.001,
+    "lrf": 0.01,
+    "momentum": 0.937,
+    "weight_decay": 0.0005,
+    "warmup_epochs": 3,
+    "close_mosaic": 5,
+    "amp": true,
+    "mask_ratio": 4,
+    "overlap_mask": true,
+    "augmentations": "ENG01 E0 native recipe exact family",
+    "checkpoint_policy": "final scheduled epoch 60",
+    "effective_batch_nominal": 32
+  },
+  "evaluator": {
+    "source_sha256": "3a5a56f5fa5be1a8f5464a750eb5fdb3ee4dad49f7d0b876a3dc7fa83cc1e4da",
+    "gt_grid": 640,
+    "highres_mask_resize": "cv2.INTER_NEAREST",
+    "box_scale": "640/imgsz",
+    "confidence_ap": 0.001,
+    "nms_iou": 0.7,
+    "max_det": 300
+  },
+  "gate": {
+    "scale_AP_pp": 0.3,
+    "scale_small_AP_pp": 1.5,
+    "scale_overall_floor_pp": -0.1,
+    "scale_AP75_floor_pp": -0.5,
+    "capacity_AP_pp": 0.3,
+    "capacity_small_AP_pp": 1.5,
+    "capacity_overall_floor_pp": -0.1
+  },
+  "budget": {
+    "stage_A_new_tasks": 2,
+    "total_new_tasks_max": 19,
+    "training_process_hours_max": 72
+  },
+  "high_resolution_freeze_sha256": "e95f59dd6b3943ae7888018fc59df74b0f0a1b4d0e6c8c79abbcba1b02d6bd91",
+  "shared_gpu": true,
+  "test_access": false,
+  "created_utc": "2026-09-24T05:33:13.579688+00:00"
+}

@@ -1,0 +1,1306 @@
+{
+  "schema": 1,
+  "description": "Selected original research records. Relative source paths retain native stage layout; no experiment was rerun for this export.",
+  "files": [
+    {
+      "source": "diagnostics/p1a_coef_refit/FINAL_REPORT.md",
+      "published": "diagnostics/p1a_coef_refit/FINAL_REPORT.md",
+      "source_sha256": "8c364822744553adc1dc7171e75e6ba58222abd2f1bccf8a85183adbd8e9422b",
+      "published_sha256": "ffe512ea58e14dd0f49bac8fa8c0511da4b3347d2d383ef40d67091e71e8110c",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        {
+          "local_link_adaptations": [
+            {
+              "from": "![未闭合精度案例](artifacts/visualizations/precision_failure__val__00260__8.png)",
+              "to": "未闭合精度案例（原资产，本次未收录：`artifacts/visualizations/precision_failure__val__00260__8.png`）"
+            },
+            {
+              "from": "[完整 per-instance CSV（255 行，含 provenance）](artifacts/per_instance_results_annotated.csv)",
+              "to": "完整 per-instance CSV（255 行，含 provenance）（原资产，本次未收录：`artifacts/per_instance_results_annotated.csv`）"
+            },
+            {
+              "from": "[sample manifest](artifacts/sample_manifest.json)",
+              "to": "sample manifest（原资产，本次未收录：`artifacts/sample_manifest.json`）"
+            },
+            {
+              "from": "[dataset manifest](artifacts/dataset_manifest.json)",
+              "to": "dataset manifest（原资产，本次未收录：`artifacts/dataset_manifest.json`）"
+            },
+            {
+              "from": "[mask closure](artifacts/mask_path_closure.json)",
+              "to": "mask closure（原资产，本次未收录：`artifacts/mask_path_closure.json`）"
+            },
+            {
+              "from": "[BCE optimizer closure](artifacts/oracle_optimization_closure.json)",
+              "to": "BCE optimizer closure（原资产，本次未收录：`artifacts/oracle_optimization_closure.json`）"
+            },
+            {
+              "from": "[precision closure](artifacts/precision_closure.json)",
+              "to": "precision closure（原资产，本次未收录：`artifacts/precision_closure.json`）"
+            },
+            {
+              "from": "[最终完整性验收](artifacts/final_validation.json)",
+              "to": "最终完整性验收（原资产，本次未收录：`artifacts/final_validation.json`）"
+            },
+            {
+              "from": "[总览图](artifacts/plots/diagnostic_overview.png)",
+              "to": "总览图（原资产，本次未收录：`artifacts/plots/diagnostic_overview.png`）"
+            },
+            {
+              "from": "[优化曲线](artifacts/plots/optimizer_curves.png)",
+              "to": "优化曲线（原资产，本次未收录：`artifacts/plots/optimizer_curves.png`）"
+            },
+            {
+              "from": "[选择清单](artifacts/visualization_selection.json)",
+              "to": "选择清单（原资产，本次未收录：`artifacts/visualization_selection.json`）"
+            },
+            {
+              "from": "[exact CLI / run registry](artifacts/run_registry.csv)",
+              "to": "exact CLI / run registry（原资产，本次未收录：`artifacts/run_registry.csv`）"
+            },
+            {
+              "from": "[代码 diff](artifacts/git_diff_from_empty.patch)",
+              "to": "代码 diff（原资产，本次未收录：`artifacts/git_diff_from_empty.patch`）"
+            },
+            {
+              "from": "[最终源码快照](artifacts/final_source_snapshot.json)",
+              "to": "最终源码快照（原资产，本次未收录：`artifacts/final_source_snapshot.json`）"
+            },
+            {
+              "from": "[全部 artifact 哈希索引](artifacts/artifact_index.json)",
+              "to": "全部 artifact 哈希索引（原资产，本次未收录：`artifacts/artifact_index.json`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1a_coef_refit/MASK_PATH.md",
+      "published": "diagnostics/p1a_coef_refit/MASK_PATH.md",
+      "source_sha256": "0662205a673f85e626bfcc5bdb90b32d9403340ffa4eb2157eb3798391abb7e7",
+      "published_sha256": "ca34058c074183d3e7915c50a5e1b26d886e982b643a749bae4e9fa46be76d8b",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1a_coef_refit/PROTOCOL.md",
+      "published": "diagnostics/p1a_coef_refit/PROTOCOL.md",
+      "source_sha256": "df89513a8c9dd6e3544b887d67b037547e7613708df8bb497d150d6a470a5967",
+      "published_sha256": "2e65a6ac46baa1fb48f289e6effc486e4bd5b6159d9c71d66a7a6f01d8dc3424",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1a_coef_refit/README.md",
+      "published": "diagnostics/p1a_coef_refit/README.md",
+      "source_sha256": "84147d5ac23d373e3dda4ea2c4f92cc02a31910df3e790723c6d48fe694f6f7f",
+      "published_sha256": "016e0637526987e8ce1a37dc54db86e9e82a5944ff28a3913ef5a8a06b57afb5",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/EXECUTION_JOURNAL.md",
+      "published": "diagnostics/p1b_publishability_triage/EXECUTION_JOURNAL.md",
+      "source_sha256": "0793905fd9092fe153bf6e43f1c89e8c761e384cfa940f9283a99b2cabbae952",
+      "published_sha256": "914ae18af57bbe758377b9369d400fc45c7b6b6262be3c4f14ed5a14dec84978",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/FINAL_REPORT.md",
+      "published": "diagnostics/p1b_publishability_triage/FINAL_REPORT.md",
+      "source_sha256": "60fc8d572f5a1a151625d8a9d875f7c3c58e8d77d243daf1c1d10fb030eac202",
+      "published_sha256": "dec6ed6ac15c533463ed8064d333eabc95b8f68328dd9feecde56a3217fbd139",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "[三种子 matched IoU/AP](artifacts/analysis/probe_vs_AP.png)",
+              "to": "三种子 matched IoU/AP（原资产，本次未收录：`artifacts/analysis/probe_vs_AP.png`）"
+            },
+            {
+              "from": "[固定留出实例](artifacts/analysis/heldout_examples.png)",
+              "to": "固定留出实例（原资产，本次未收录：`artifacts/analysis/heldout_examples.png`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/MEASUREMENT_NOTES.md",
+      "published": "diagnostics/p1b_publishability_triage/MEASUREMENT_NOTES.md",
+      "source_sha256": "1014b90b805716ddbc6b01e181d17afa8e303c1762bea15fbbb0e95af3bea74a",
+      "published_sha256": "a19236c3dcca87a8a9e735b043200f0b171441d6c7de5b2e827cc74c8be49c4f",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/MODEL_AUDIT.md",
+      "published": "diagnostics/p1b_publishability_triage/MODEL_AUDIT.md",
+      "source_sha256": "e546f069e10829ece23f9102d5fd7bd97eeb40cdb93c67c31e1b2b02f16e6375",
+      "published_sha256": "0b89139e39549714f2b3cac80cc360ea80f56ce18b975dfd1dc1bf59ec3d88d7",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/NOVELTY_MATRIX.md",
+      "published": "diagnostics/p1b_publishability_triage/NOVELTY_MATRIX.md",
+      "source_sha256": "64ea02d5e5527a8c617976e575934637a01b36bc60778d51704fffa61861f7a0",
+      "published_sha256": "ec91456c2eb0d227d13090c100d39b8cbd99a98bf509715bc7ada5289e6ec9d0",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/NUMERIC_CONTRACT.md",
+      "published": "diagnostics/p1b_publishability_triage/NUMERIC_CONTRACT.md",
+      "source_sha256": "749206aa674ac0af26ffcb6cc0f906e30f4373f8bde10b214e9ec63554bbd0c5",
+      "published_sha256": "d6b2b322b0e4131f4750d05690d3ce36e4b8711e6de710a3c7cd16a8fe7c9eec",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/PROTOCOL.md",
+      "published": "diagnostics/p1b_publishability_triage/PROTOCOL.md",
+      "source_sha256": "e5dbf69d49d184679a15ff6c37163ca96918e5ab2013a84f439b4a22c273c13f",
+      "published_sha256": "31e15ea8bb5c644a8dcd0e4189715e5490f5ca371228e5b760d8d1823e1ca455",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/README.md",
+      "published": "diagnostics/p1b_publishability_triage/README.md",
+      "source_sha256": "e8750a042ade592940042e0351b1a7fef2fd8180165b2323fdb935c497ee390b",
+      "published_sha256": "5084688c5e375437618fdcc403c86bfd7db10ce2a67d94b94ee92d0f34284fdc",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "[configuration](config.json)",
+              "to": "configuration（原资产，本次未收录：`config.json`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/RESULT_TABLES.md",
+      "published": "diagnostics/p1b_publishability_triage/RESULT_TABLES.md",
+      "source_sha256": "3dc46bd684f21ac413cc89f0faeece439ec60fe5a2d14482382fa2ca16adda04",
+      "published_sha256": "e676a4b6b163520705d952ede974d3f05a8b30cc42a1e023d2139ce3a2d34ee0",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/EXECUTION_JOURNAL.md",
+      "published": "diagnostics/p1c_objective_alignment/EXECUTION_JOURNAL.md",
+      "source_sha256": "7481e6cee88f3ae0e09a6ff38f625330c30eff6542045dc0f8e16a5c4feb651f",
+      "published_sha256": "17aab9784b22822ccb51760742b9f58e8698f3c07c1f20e85f5ead12f7a77754",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/FINAL_REPORT.md",
+      "published": "diagnostics/p1c_objective_alignment/FINAL_REPORT.md",
+      "source_sha256": "ac002592882ea3cf9ee5f095574f26431a8da7328422ff4102cf354ab9c3da96",
+      "published_sha256": "97841b321f909941d6a9e31cdbab01ecfdfa1fadad04367ed0c699433f461926",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/LOSS_PATH_AUDIT.md",
+      "published": "diagnostics/p1c_objective_alignment/LOSS_PATH_AUDIT.md",
+      "source_sha256": "7ce451758e0fc6f893e62a3b5a64e8b52518849b7a5646d24658239509910109",
+      "published_sha256": "7667de6ed529371256716f691958834a79afbd9e26634e9d96ae61edaa606c22",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/MEASUREMENT_NOTES.md",
+      "published": "diagnostics/p1c_objective_alignment/MEASUREMENT_NOTES.md",
+      "source_sha256": "814b14cd873e2464f52360d72a55b0dcca266e1ab8253cdb57396cd1a7dc87f3",
+      "published_sha256": "b06f988fe4dd16d486097e7efa8a0050c6ebd998ab149bc6fdd2561b981eed9a",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/OBJECTIVE_NOVELTY_MATRIX.md",
+      "published": "diagnostics/p1c_objective_alignment/OBJECTIVE_NOVELTY_MATRIX.md",
+      "source_sha256": "948679ced096533138085c2e9f53e3bb5d6950f7faffd3a21d4816ffc000b339",
+      "published_sha256": "7f694931b7b42a9b95d3885ea342443a731b214408a4c78486df4114ebfb5b23",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/P1B_AP_DIAGNOSIS.md",
+      "published": "diagnostics/p1c_objective_alignment/P1B_AP_DIAGNOSIS.md",
+      "source_sha256": "ddfc812e0accc3ce6e06c552f2f772e122a256356a07d9f0b91618c80d9c8407",
+      "published_sha256": "8f9ec94c17be2367ef5331c367a27b8d062c4e6ace5e9e88bfadc08eede0c0ee",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "![Fixed-rule illustrative cases](artifacts/analysis/p1b/P0_42_cases.png)",
+              "to": "Fixed-rule illustrative cases（原资产，本次未收录：`artifacts/analysis/p1b/P0_42_cases.png`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/PROTOCOL.md",
+      "published": "diagnostics/p1c_objective_alignment/PROTOCOL.md",
+      "source_sha256": "e1cf3bbd3370f8ea45b96d65318bad2ac5c152ee6fb9ca505fe09946933704ad",
+      "published_sha256": "644493f40de8d9082f1db5045665dd1a0a20d73dafebdcf31944a425bd706997",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/README.md",
+      "published": "diagnostics/p1c_objective_alignment/README.md",
+      "source_sha256": "d0f1b097541bd4efcfbe0633c0a2f18cfe69069bb8a916bd86ef89d553ef9ae1",
+      "published_sha256": "985724b60b88e4400dad7be25b33b2533e141b0fd1ae34567b8e2e2ef5444ca0",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "[config.json](config.json)",
+              "to": "config.json（原资产，本次未收录：`config.json`）"
+            },
+            {
+              "from": "[User request](USER_REQUEST.md)",
+              "to": "User request（原资产，本次未收录：`USER_REQUEST.md`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1c_objective_alignment/RESULT_TABLES.md",
+      "published": "diagnostics/p1c_objective_alignment/RESULT_TABLES.md",
+      "source_sha256": "8cb643e2fc66d4ac6da1600cd32f0a833f6f35f8a11d566fb6e7de28dc7144ba",
+      "published_sha256": "86367433306458facb6a7379b82061db802d7e4237e6efedec3325c5d2348af6",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/EXECUTION_JOURNAL.md",
+      "published": "diagnostics/p1d_engineering_qualification/EXECUTION_JOURNAL.md",
+      "source_sha256": "93fa92ceb6242401afbda9337acaed26052dcaabfe1369ff9f9f9384595be841",
+      "published_sha256": "8f6118a67c6aa32651dcc55983b30bb18f6688c86126e0f5c0b212b29f0e06a6",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/FINAL_REPORT.md",
+      "published": "diagnostics/p1d_engineering_qualification/FINAL_REPORT.md",
+      "source_sha256": "b4ebade383e0c677e40b1523ecd53b1ec6fade7cabfd500c59ae339a747510d5",
+      "published_sha256": "bfc4fff6aaffa9dddfda06ba3feccb15b18f6ee74d4e01459d808ced3389bfa8",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/P1D_NOVELTY_MATRIX.md",
+      "published": "diagnostics/p1d_engineering_qualification/P1D_NOVELTY_MATRIX.md",
+      "source_sha256": "9abb5240d89f3f69b56eaedb794661125a631f032ffc11d52876a9c73d776d79",
+      "published_sha256": "314f74ddcf874537216548197ef011ca9d4f58bb3158ff1bc50ab02282d55870",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/PROTOCOL.md",
+      "published": "diagnostics/p1d_engineering_qualification/PROTOCOL.md",
+      "source_sha256": "6089fbd5f7e062be93e54afb03120103c86a5f93276abe47256b886316c6ddf0",
+      "published_sha256": "92fcd98008d82c30c53abea92288f0ff2b266fe0591d082acaabd344fb5ec099",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/QUALIFICATION_RESULTS.md",
+      "published": "diagnostics/p1d_engineering_qualification/QUALIFICATION_RESULTS.md",
+      "source_sha256": "ccd9c26167597fe1e26d5b949e799827afda56bd9d270fefeba9f2711fd5067a",
+      "published_sha256": "d0d1facffc7ee5673d312f6798d5a91708eca42ccbeeaae1e3f482ec74eaf444",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/README.md",
+      "published": "diagnostics/p1d_engineering_qualification/README.md",
+      "source_sha256": "16b9544ea611a4e595c616c37eeabd81f0f96f685e5c4ddb5c531000bf283dab",
+      "published_sha256": "1c3d1fac62c64d4aab84f8fb4a434c5178979a5df0687407a48bfc243b91b3f2",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/SPECIALIZATION_CONTRACT.md",
+      "published": "diagnostics/p1d_engineering_qualification/SPECIALIZATION_CONTRACT.md",
+      "source_sha256": "e72bf446ae7d527bda43b819543da068d6d5b88d55ab5c97d20f4fe48cb40c78",
+      "published_sha256": "d0d2ad21d7c306c0f612669c841facb7d805244fa6584ea4427ba6ad273fb702",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1d_engineering_qualification/STAGE_A_RESULTS.md",
+      "published": "diagnostics/p1d_engineering_qualification/STAGE_A_RESULTS.md",
+      "source_sha256": "8745fbcc5e11385adfce4d35cdc5b95ad345bb4e71dc47ebf3af8e9b722729f9",
+      "published_sha256": "4061b1c9154e2ce24d08f323365b6c724d605cd37ca55f5135ee0797a7d38d66",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/EXECUTION_JOURNAL_P1E.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/EXECUTION_JOURNAL_P1E.md",
+      "source_sha256": "399c672f69ae123ad7617f9bc1bdc6806bbc9900dc16011777ae8c4b07e2e49f",
+      "published_sha256": "a16d19c00169238991a3cc84f40f670e7a7c1dba38ad12956c544879708725e7",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/FINAL_REPORT_P1E.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/FINAL_REPORT_P1E.md",
+      "source_sha256": "7cf48982ba0eb65fd0099e8d5681329790aa4bb97fa864995a24cb5cc00c5813",
+      "published_sha256": "18e4011485fcfbaa0acc427a33d1d1d4f87d7b2a331ea3d49c8b79ae2c7e5e47",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/INHERITANCE_AUDIT.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/INHERITANCE_AUDIT.md",
+      "source_sha256": "4b698b6b826fd4a42b06ef806a91ebb19ce27b5d45b58612c354b9912a3b14dc",
+      "published_sha256": "27626438304451332fbc4c8b7bcc3aeaa0288e1cd34245ab4c376f6a32cc041b",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/P1E_NOVELTY_MATRIX.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/P1E_NOVELTY_MATRIX.md",
+      "source_sha256": "48fcc2161be9e70cf14c32f85f9c10e20011ac3f36e61b5632758b1f25844930",
+      "published_sha256": "1e585587c02a3e8ae2f05c28a5fcac51d6eaf28a24a43e43a5a7db82dd2e3a17",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/P1F_METHOD_BLUEPRINT.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/P1F_METHOD_BLUEPRINT.md",
+      "source_sha256": "840f362d1072c44612acd7d08b31a2d0ff8ff5dc5ccf9f936071718e6cf8bee2",
+      "published_sha256": "41e44c3fecb7dd1625466bb0538d2ce241b3bbff655fc0ad61c4bfd3f50b12ed",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/PROTOCOL_P1E.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/PROTOCOL_P1E.md",
+      "source_sha256": "b9d2cd06280f4dd373e30a446af395f68b99f801a7da572df141a7924663a91d",
+      "published_sha256": "37cdda6fee041197961cbc7a6b253f0ab56863ec1b49ec341ccf0ed4e13dbbed",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/README_P1E.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/README_P1E.md",
+      "source_sha256": "50c76097cb1813d5e31817b5de6e2705be39f775507a71d402be330dd835f1c5",
+      "published_sha256": "d28cc57c3ba1d0cff375edd5ff8ea43bacd1eda1d35275fb03441ee87d2e5771",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1e_structural_bottleneck_triage/SOURCE_PATH_AUDIT.md",
+      "published": "diagnostics/p1e_structural_bottleneck_triage/SOURCE_PATH_AUDIT.md",
+      "source_sha256": "94cbc866a2b6264264a364eca0c2137cd0a6f44f0fdaf65b2df9f4c422839343",
+      "published_sha256": "aa1c9e4e9d6208867309ac67647c28774e7628b49b16329cfb0aef532f5e1a60",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/DEVELOPMENT_GATE_CONTRACT.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/DEVELOPMENT_GATE_CONTRACT.md",
+      "source_sha256": "37b4c5e2a48cef24889fb1bda0028af07fc61ecacbcdef910284b9072e019551",
+      "published_sha256": "7e685e6adbc9cf7d23f278d073fa3626b59dc003a49d21f1c7053a748be17f59",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/EXECUTION_JOURNAL_P1F.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/EXECUTION_JOURNAL_P1F.md",
+      "source_sha256": "34fbbf562c4c2bea70904dc437a7018c27da8e6d7f3f61b97025fb69bad925e1",
+      "published_sha256": "e7d1ecd6bd0ef7e260a513bf89fb668e48f1489a69ccc14beeabe199187c87a9",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/FACTORIAL_IMPLEMENTATION_CONTRACT.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/FACTORIAL_IMPLEMENTATION_CONTRACT.md",
+      "source_sha256": "3b1dff11fc857be8780d937d05a9574a9b52313f6ac76dbca718e092bdb84e5e",
+      "published_sha256": "372643cc01fbf89f6f1f5790318f8904daae1f12fce0180cc8402dd618e2eef4",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/FINAL_REPORT_P1F.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/FINAL_REPORT_P1F.md",
+      "source_sha256": "3f53637d86d2a94eb29d79b141567864a9beb3b589ab7a6c0f5add9e613f9bdb",
+      "published_sha256": "cf14ed28a11d224a7fb3ee6e64a7a373370d539492d70c00651836b3a31208f4",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        {
+          "local_link_adaptations": [
+            {
+              "from": "![Seed42 factorial metrics](${RESEARCH_ROOT}/diagnostics/p1f_thin_prototype_attribution/artifacts/factorial/analysis/factorial_results.png)",
+              "to": "![Seed42 factorial metrics](artifacts/factorial/analysis/factorial_results.png)"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/P1F_NOVELTY_UPDATE.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/P1F_NOVELTY_UPDATE.md",
+      "source_sha256": "6dc5c69125303d4b057fe3cf7075a39c186658a423970ddcc2556d8c3eb6c636",
+      "published_sha256": "62d6c683293d6ace959ed579fcdcbd175ee7c94a34a7be2f90f3e79970664cd7",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/PROTOCOL_P1F.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/PROTOCOL_P1F.md",
+      "source_sha256": "a386a1a013ebf3f2011eeb6f78f0411b3ee2aec870c77150d9541477e707eefd",
+      "published_sha256": "ad374b28d241664a583778ead725bf5f0ed1a99aca14dcab29a723d800677d6d",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/README_P1F.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/README_P1F.md",
+      "source_sha256": "97c0af6089ecb47f81f693293004347e00d1593cb833dc52efa9ac4cb7ba0cc9",
+      "published_sha256": "6eec9f1f5cb2c7a6a1aeaf40ce1f0e57751c54b82a0b847a474a75ef7d132c3c",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/REPLICATION_CONTRACT.md",
+      "published": "diagnostics/p1f_thin_prototype_attribution/REPLICATION_CONTRACT.md",
+      "source_sha256": "4ed6c80a85ca340e440c868660af1fbec384c47fc1b689c579d4a2cf9817e808",
+      "published_sha256": "55d51a9c20ffcb453e5c7d5d8f45317cc235c8cf436e9d568af7a51eff3933c4",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/artifacts/factorial/analysis/factorial_results.png",
+      "published": "diagnostics/p1f_thin_prototype_attribution/artifacts/factorial/analysis/factorial_results.png",
+      "source_sha256": "78d64f339772a57993a10e24c4af86140f4e61a528a21d7535e2a1b1bcbd8757",
+      "published_sha256": "78d64f339772a57993a10e24c4af86140f4e61a528a21d7535e2a1b1bcbd8757",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/ENGINEERING_CONTRACT.md",
+      "published": "engineering/eng01_semantic_detail_boundary/ENGINEERING_CONTRACT.md",
+      "source_sha256": "a4bfc4af785ec5b0144f7bffc7c7bccc8fe87a40157f04740c549b271d208220",
+      "published_sha256": "01d58964f997a8906d5983d2c8abfd92684ac25c642a639cc7fdaae3c7034c2f",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/EXECUTION_JOURNAL.md",
+      "published": "engineering/eng01_semantic_detail_boundary/EXECUTION_JOURNAL.md",
+      "source_sha256": "e6c742a9d56745f569da32ce58d0f708490b7eb62984bcff397b115309cca41b",
+      "published_sha256": "d6857833e27240cbe0227c674709294ca4dceb307afd9b80741639cb558e59a5",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/FINAL_ENGINEERING_REPORT.md",
+      "published": "engineering/eng01_semantic_detail_boundary/FINAL_ENGINEERING_REPORT.md",
+      "source_sha256": "521184d7bcd863e0324edbdfb68f2c925fe852963a8494d98ebfbcd782bbfeb9",
+      "published_sha256": "4ff82fc68dc1e5549319665f99d16897e97511713a84a3241dab197e42c7198b",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/PAPER_MAINLINE_BLUEPRINT.md",
+      "published": "engineering/eng01_semantic_detail_boundary/PAPER_MAINLINE_BLUEPRINT.md",
+      "source_sha256": "7ba65f1e9f5581a78b3c1e72cdc764a3a4b52a98669f6c2d640c213f5c550882",
+      "published_sha256": "218d23f38af3d0762602a7fdae15c30914ee25fdfbf395a2942553b4c2bc697a",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/README.md",
+      "published": "engineering/eng01_semantic_detail_boundary/README.md",
+      "source_sha256": "b7fe557256c03ee0c1e0f4c1217b0e40466208b95eb046ecf875d74eeae66226",
+      "published_sha256": "2aefe474be11c5c34657748ac45a386a931628ce55d0b156a933c7205974ab8c",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/configs/frozen.json",
+      "published": "engineering/eng01_semantic_detail_boundary/configs/frozen.json",
+      "source_sha256": "795086ed93145b30fc1762a515700612cbf980019a6dfaa057beb96144318c1f",
+      "published_sha256": "606846ed44ce71c17e882247dd8964186869264fc5a3fddc0de12079b8e66aa3",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/results/REPLICATION_TABLE.csv",
+      "published": "engineering/eng01_semantic_detail_boundary/results/REPLICATION_TABLE.csv",
+      "source_sha256": "917917e5118130c4315fb10259dfeedfa9bbce6ed56cd193f3e03b7f23ebffbc",
+      "published_sha256": "e76b49fb287b9506247807f7408e9d4fd336d3a77e2475f76365a1505902e67a",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/results/SEED42_MATRIX.csv",
+      "published": "engineering/eng01_semantic_detail_boundary/results/SEED42_MATRIX.csv",
+      "source_sha256": "77ced2eec287b0ef224d312faf3c31339816e3c3e85fd1cedb6ff30b7ad03022",
+      "published_sha256": "a5d0cd051b6ec43a3fa3e38f107fdfc4d8d9c9ae2991918e7c41eadb1535add8",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/results/STATIC_COMPLEXITY.csv",
+      "published": "engineering/eng01_semantic_detail_boundary/results/STATIC_COMPLEXITY.csv",
+      "source_sha256": "b60ec015ecd6c67befb6c3b39a9e97049c05e1f14e167901e22ae727dd20bab2",
+      "published_sha256": "1f9845d000aebb299b2efc5d7e36dac8f5e88482be2843b92d68ccaf86b95ab6",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/results/figures/REPLICATION_E4_E0.png",
+      "published": "engineering/eng01_semantic_detail_boundary/results/figures/REPLICATION_E4_E0.png",
+      "source_sha256": "fef378fbd8e9f0d6c363808d0be77dc8c24eee4ef44e1bbc9a10792ba39d428f",
+      "published_sha256": "fef378fbd8e9f0d6c363808d0be77dc8c24eee4ef44e1bbc9a10792ba39d428f",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/ENG02_VERDICT.md",
+      "published": "engineering/eng02_scale_capacity_small_object/ENG02_VERDICT.md",
+      "source_sha256": "dd990ad2c84ba2bbe1729850ca769e518e54534ffe0d63ce71ce1a3e467dac9b",
+      "published_sha256": "02f87bf1635f6fc5212f4957bf011243b288f66ac4cad3113fc5bb01c7455e3e",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "[`analysis/KD_SEED42_DECISION.json`](analysis/KD_SEED42_DECISION.json)",
+              "to": "`analysis/KD_SEED42_DECISION.json`（原资产，本次未收录：`analysis/KD_SEED42_DECISION.json`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/ERROR_PROFILE_ENG02.md",
+      "published": "engineering/eng02_scale_capacity_small_object/ERROR_PROFILE_ENG02.md",
+      "source_sha256": "15047c30ee60bd8f89cd3e3e765591dca22d1e1e699cccec0b478cd763af6e47",
+      "published_sha256": "918d46ed4c283a5734bbcfadcd98de5be03264b6d04c8f42e825a086672e1365",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/EXECUTION_JOURNAL.md",
+      "published": "engineering/eng02_scale_capacity_small_object/EXECUTION_JOURNAL.md",
+      "source_sha256": "5bf29cf82c6ddf00e3afa2be1444a366d4a68040038596a7e96a7a19d04d5f63",
+      "published_sha256": "4b5d0ab5c5bed90a4e8a97bee23bee4e10214c93abb74e28df34b844e39acb54",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/README.md",
+      "published": "engineering/eng02_scale_capacity_small_object/README.md",
+      "source_sha256": "88edd074d8f8a1818d65ba890039cddb18aa2d0315c87377672fe2ae67ee4435",
+      "published_sha256": "ae65f7f836bef1a2d0a6f86c964fb9837c3ae8cec776b6759c597bd2c77fe1fc",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/analysis/ENG02_AP_COMPARISON.png",
+      "published": "engineering/eng02_scale_capacity_small_object/analysis/ENG02_AP_COMPARISON.png",
+      "source_sha256": "9e6f0359023240574739658586888743f6ee53b4827364bf1edd12a4ec1c8045",
+      "published_sha256": "9e6f0359023240574739658586888743f6ee53b4827364bf1edd12a4ec1c8045",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/analysis/KD_SEED42_DECISION.md",
+      "published": "engineering/eng02_scale_capacity_small_object/analysis/KD_SEED42_DECISION.md",
+      "source_sha256": "ee3ebf9ceffd66e3c2842639140dd3bed70652efb9e693de9a1c3636a254dd97",
+      "published_sha256": "b93445af4b063221f622682f63f6aaae83941e2d295efbc6868afd50f413ad77",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/configs/FROZEN_KD.json",
+      "published": "engineering/eng02_scale_capacity_small_object/configs/FROZEN_KD.json",
+      "source_sha256": "382901a431b3c645f418977e8ea2a56b2699123c6b794763c3523371f08989cd",
+      "published_sha256": "6d72f4662e62a123557387a87ccdebe35b74fbb2482c3beb69364275750e6438",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/configs/FROZEN_STAGE_A.json",
+      "published": "engineering/eng02_scale_capacity_small_object/configs/FROZEN_STAGE_A.json",
+      "source_sha256": "2af4308734f538d515a7699721b10bbffe802589d428f094cadbb1bb2f3d5f6a",
+      "published_sha256": "093a452d44778055356a52e437fd4d73e38423ac95b80068a79c5808863d8564",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/configs/HIGH_RESOLUTION_FREEZE.json",
+      "published": "engineering/eng02_scale_capacity_small_object/configs/HIGH_RESOLUTION_FREEZE.json",
+      "source_sha256": "e95f59dd6b3943ae7888018fc59df74b0f0a1b4d0e6c8c79abbcba1b02d6bd91",
+      "published_sha256": "8563157a550c074f78d737310fa256558f49a86ead33d4ffdc652a636964df4d",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/contracts/SCREENING_CONTRACT.md",
+      "published": "engineering/eng02_scale_capacity_small_object/contracts/SCREENING_CONTRACT.md",
+      "source_sha256": "80061dab86bb21d2e4918dc761a8bbcc7d80ab6f5fdef6cdda46021e7a5d7a06",
+      "published_sha256": "913831ff0057ac520aeda04e35d5258196f122a478707c307b97057514107544",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/efficiency/ENG02_EFFICIENCY.md",
+      "published": "engineering/eng02_scale_capacity_small_object/efficiency/ENG02_EFFICIENCY.md",
+      "source_sha256": "8593d1490b2e452bf32e1973fb56859d8c0571ff2cfab40b8a2c34d9dc174fb2",
+      "published_sha256": "04e23a5b64c3c040405e116053332d992104ca880cb456e907fb7cc4981f30a1",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/literature/KD_TARGETED_REVIEW.md",
+      "published": "engineering/eng02_scale_capacity_small_object/literature/KD_TARGETED_REVIEW.md",
+      "source_sha256": "2f23b1edf4755bca0005e91ef2923116e1070643f5fbf797d1c7a4c6e08ff903",
+      "published_sha256": "c3aee9d63dd0c801dc6c5b636768df01f31f8dd0d7c01535c0788b48a90206a7",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/ADAPTIVE_SEED_POLICY.md",
+      "published": "engineering/eng03_instance_quality_transfer/ADAPTIVE_SEED_POLICY.md",
+      "source_sha256": "59dc022fa47630db1322d73059e1e56f937abbcd94bc8f43e0d228589b4184a3",
+      "published_sha256": "0ea0905c9b4a289e3380c129b203d3efa6c0650cc00f9e9e0e18daca38489a10",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/EXECUTION_JOURNAL.md",
+      "published": "engineering/eng03_instance_quality_transfer/EXECUTION_JOURNAL.md",
+      "source_sha256": "72a7fe90cb86c662b90a9ea2fdd5c198ced135f4e43817f0897e958baf900ed5",
+      "published_sha256": "aaf134277558d8fb53510f1ec4c19d49006bf2088fc2cb4e095106cc486e0ca6",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/FINAL_RESEARCH_REPORT.md",
+      "published": "engineering/eng03_instance_quality_transfer/FINAL_RESEARCH_REPORT.md",
+      "source_sha256": "937c8f9ec0ba72e38fe805410b4a514e6c3cf25611034a4107b46060ff8b7042",
+      "published_sha256": "21ff818ecfe38e5fd42ed62ea30b4aeca0d559822a519a9d243f71f65fd0856c",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "[逐实例数据](analysis/n0_s128_instance_evidence.csv)",
+              "to": "逐实例数据（原资产，本次未收录：`analysis/n0_s128_instance_evidence.csv`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/METHOD_SPEC.md",
+      "published": "engineering/eng03_instance_quality_transfer/METHOD_SPEC.md",
+      "source_sha256": "57d99d33e26d2686008a6680009f9cc13314365aad137dc18cdfaa1d88b3074c",
+      "published_sha256": "90ddb80b4e404fe4cecce68a6c3ed7170e0bed0133ccc48492766ab45ad584ce",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/NEAREST_PRIOR_AND_CLAIM_DIFF.md",
+      "published": "engineering/eng03_instance_quality_transfer/NEAREST_PRIOR_AND_CLAIM_DIFF.md",
+      "source_sha256": "8e69b667c8f043ac8c851af578c8d7bf41e16d142fa65f7c86d906348896faea",
+      "published_sha256": "765fef343c4672bb82d1b9f3330d2150d3d9b43c63f36713a1c4ea0d2f4395b4",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/README.md",
+      "published": "engineering/eng03_instance_quality_transfer/README.md",
+      "source_sha256": "50a260ff83eb4148667714b130658fae4de28c8bbdc2c9ad3d787e16a99cd3ab",
+      "published_sha256": "e395bf1c246518a820ec59f7320d5b4f88468c0963f02a81e886ff923864d6ce",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/RESEARCH_CHARTER.md",
+      "published": "engineering/eng03_instance_quality_transfer/RESEARCH_CHARTER.md",
+      "source_sha256": "152713ec4ac98319366fe501a911f9b959a1d5f730b8e5c84a02d459ab8773d1",
+      "published_sha256": "3d4a7a2566015b1e0bb8984d69874777d9feb9b44a39b535ce76df724ac20f66",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/RESULTS_MASTER.csv",
+      "published": "engineering/eng03_instance_quality_transfer/RESULTS_MASTER.csv",
+      "source_sha256": "b8cc67e87f45c8d9a6682a4591e68f561ffd93539edc9174b66b1fe1cfdc6b59",
+      "published_sha256": "ca1c4c66c89af27bd11d0a66204e7d0ba915f09c4fce2bd69c74a13d21389415",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/DEVELOPMENT_V1_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/DEVELOPMENT_V1_DECISION.md",
+      "source_sha256": "8692123a13a784a5b0d6433ea12f8750369a3582b334822770b41dec7063b0b8",
+      "published_sha256": "5c0ce374106caf3f61241389a7767592bcd9d79f691a2ee8a941c232d9ecb3b1",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/DEVELOPMENT_V2_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/DEVELOPMENT_V2_DECISION.md",
+      "source_sha256": "4136d3b7741cedacabca66a59b9c51e2853baaf98fccece8fedfe9f6baa1cc95",
+      "published_sha256": "49bd5e935305cb836c951441d06e732d5cafb79f5dbfa8d03dff29dc8886556c",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/F0_S2024_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/F0_S2024_DECISION.md",
+      "source_sha256": "258abf232f48b2f950cfdc141432fa30ec1edd6dc46a852c03109956f20926f4",
+      "published_sha256": "9599cf3411e77a6deccc016a017f82e02855bc16da7b5940361caf8e29465528",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/N0_S128_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/N0_S128_DECISION.md",
+      "source_sha256": "12db62f62d46522ef350a7a45d1856376869b0b95954da9b7bc93bc33b7054e4",
+      "published_sha256": "0076a1101228493f7c8c5543975b923f40a5758445d11fd121ae223bc040e1f5",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/PAIRED_NATIVE_D0.png",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/PAIRED_NATIVE_D0.png",
+      "source_sha256": "5d67228858839edcbdfd901d9ccb07251202ab28c3b8f3a0f9cf0ebf313d4022",
+      "published_sha256": "5d67228858839edcbdfd901d9ccb07251202ab28c3b8f3a0f9cf0ebf313d4022",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/R0_S2024_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/R0_S2024_DECISION.md",
+      "source_sha256": "64399982e5f712b13281b59627c4d74ed31c0b892fb3d8dc9dac39efa2fa4f85",
+      "published_sha256": "32b70f05bf7e0e7c6972ac2da51a4c3e27e82429990afffd008b31c654e1a087",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/SEED128_ADAPTIVE_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/SEED128_ADAPTIVE_DECISION.md",
+      "source_sha256": "26d6292dfaae13b606313f3109365c112c3f058f7b90dcd7c1b85b3dc422e5c8",
+      "published_sha256": "e556b48d1676dd66efc5c214b4620b7075dbb6383a8c5fb9e428d01a1859e714",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/STRONG_CONTROL_V1_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/STRONG_CONTROL_V1_DECISION.md",
+      "source_sha256": "46ce6ca110b6fbdcb73ebc33553e497f630034174ed4f10884c4594833fcfe20",
+      "published_sha256": "ab8b522bc4739d8c0ead7e571149d76751971b50dc5f640a2a781f6122e42aa5",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/analysis/TRAIN_MASK_GATE_ALIGNMENT_DECISION.md",
+      "published": "engineering/eng03_instance_quality_transfer/analysis/TRAIN_MASK_GATE_ALIGNMENT_DECISION.md",
+      "source_sha256": "5b215a567a639fc0e9f14a6eab1dbb9c463d4dbad51e5c48490d4c668b683de8",
+      "published_sha256": "cb09cea2c6082f1e680bed5fe15e8dee308a346452717aed916efdbd0e856a3b",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V1.json",
+      "published": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V1.json",
+      "source_sha256": "801ed505967fdb7c76ef00e00856178c000cd5034520db311d2f288404ff8475",
+      "published_sha256": "8cf447b11b48ceb8d139f7fd0c3a5e3744e19310b4cbee0aa764e8e0baee1388",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V2.json",
+      "published": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V2.json",
+      "source_sha256": "d352c2f833d396c6d148e888832fc5be49799458c878e0fe3daf64a7389534ac",
+      "published_sha256": "a79ba9a62264ce0f9dc8444ffd8faf65342ef797dbbc0a47a29a33d04706c7e2",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V3.json",
+      "published": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V3.json",
+      "source_sha256": "2798db4a9b5d9d9e48756b91cb5e4d780feab2411057fe6dad7cc356c936bdf8",
+      "published_sha256": "0375fe1daef7cee289c808295ddfe86e71b02c09ee1a016fd2006253f701cbfd",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V4.json",
+      "published": "engineering/eng03_instance_quality_transfer/configs/DEVELOPMENT_V4.json",
+      "source_sha256": "cd154bdcd90abe59b09e3cd432ca89a594e9eb4597e9c64491d7c6bb50aa4b48",
+      "published_sha256": "5379b2e2cfa7cb8daed8fa977db8fa8993bc24956ed13c1b0071fcd0ae47c2ed",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/configs/REPLICATION_V1.json",
+      "published": "engineering/eng03_instance_quality_transfer/configs/REPLICATION_V1.json",
+      "source_sha256": "011f6318efd88bb2041d96321e38d209802082ed9e56c1c54678de7352008ce3",
+      "published_sha256": "011f6318efd88bb2041d96321e38d209802082ed9e56c1c54678de7352008ce3",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/configs/STRONG_CONTROL_V1.json",
+      "published": "engineering/eng03_instance_quality_transfer/configs/STRONG_CONTROL_V1.json",
+      "source_sha256": "3c9bbbbd64aa981ee33e43c8a326de5796abca3c96316630757102bb63f295eb",
+      "published_sha256": "03a9c7b9959d31683038674795ea0ac89b93ee3b37381115682135a5dd0501cf",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/configs/STRONG_CONTROL_V2.json",
+      "published": "engineering/eng03_instance_quality_transfer/configs/STRONG_CONTROL_V2.json",
+      "source_sha256": "58761a9516b21335ad82c6637f5829773ddda21f4fdd118aa5ba178fb3b8b684",
+      "published_sha256": "a3b648f7e79383b20d9a6787caf266c82c9ff52267e5ce96f0cb4b56a863cfd1",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/paper/METHOD_DRAFT.md",
+      "published": "engineering/eng03_instance_quality_transfer/paper/METHOD_DRAFT.md",
+      "source_sha256": "9c6af82fa6b3abafa1961242de06c4691408d25b5c442c190ab8bf8a66b0d972",
+      "published_sha256": "91abe6599a8565b5e8f304fe4b7ebbe1cb534e135508b9cf249abe52a329819c",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/paper/PAPER_BLUEPRINT.md",
+      "published": "engineering/eng03_instance_quality_transfer/paper/PAPER_BLUEPRINT.md",
+      "source_sha256": "276d9f00c34185a09c7c21cd34517c2081edf530ad34e825158155dfc4be9164",
+      "published_sha256": "d6c6637ff43796759a53833598e947b0724610ceb277c001b99d0899a6a63f72",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/paper/RESULTS_DRAFT.md",
+      "published": "engineering/eng03_instance_quality_transfer/paper/RESULTS_DRAFT.md",
+      "source_sha256": "530ca60ab1dd629ffb1fe66621e87b20512437239f522dbcb0b30254c04417d0",
+      "published_sha256": "120ce3dfb2efeef7436e348bb2d326812256cfb531a7152e8fe68df4f1a2009d",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/EVIDENCE_AND_METHOD_LOG.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/EVIDENCE_AND_METHOD_LOG.md",
+      "source_sha256": "34146d378027ef1fc74325ad78b34d8d61653f4a3e3d4200ae98618d0bf99aee",
+      "published_sha256": "58254ae1fef0da4e576941b21ecd275f96605c1d532c5b2572d0115ca4f47c03",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/EXECUTION_ADDENDUM_20260928.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/EXECUTION_ADDENDUM_20260928.md",
+      "source_sha256": "570c9a62705996a24c3a01b57f2f4ded636212e4c9129f687d60471051e46335",
+      "published_sha256": "11e4be5f0cf88ad933f2e9464dbc7596b54fabf815051924718de96406f39563",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/EXECUTION_JOURNAL.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/EXECUTION_JOURNAL.md",
+      "source_sha256": "5efdc2c9e4340b98769a2e2edf689dd7151fb7a89dd9c86af231722ef095c8f3",
+      "published_sha256": "31511d58db9fc5bab5f64d55511c9a56eaded1f2e5cde8d0371ee4dcb0945b6f",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/FINAL_REPORT.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/FINAL_REPORT.md",
+      "source_sha256": "424348e2e6eb8c9b30c0826670acb7bdbe96042c9f846c63cc694a9b955b12c4",
+      "published_sha256": "5cec38c4cc5541a4f9ec5b6dd61389716e022496977caa672cdeed85c052804e",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/METHOD_SPEC.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/METHOD_SPEC.md",
+      "source_sha256": "13fc940783381d880400c3c0f5a038086f5d558e2ef290a388f65207f753206d",
+      "published_sha256": "aaec172558646a9118c2413d2c9f6b1493399b2f6e3b924f8fbbcc68e88b1daf",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/README.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/README.md",
+      "source_sha256": "ba0101166084c402c4a76bb97646f327396a2eb2737f09ef957171a890d33cfd",
+      "published_sha256": "915fe75a6d8e5ff210d609cb0ffbd7abe388bb549e0fa440e8af9ee0819905d6",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "[原研究问题与约束](USER_REQUEST_ENG04.md)",
+              "to": "原研究问题与约束（原资产，本次未收录：`USER_REQUEST_ENG04.md`）"
+            },
+            {
+              "from": "[完整队列与共同 GT](analysis/confirm_j0_v1/RECEIPT.json)",
+              "to": "完整队列与共同 GT（原资产，本次未收录：`analysis/confirm_j0_v1/RECEIPT.json`）"
+            },
+            {
+              "from": "[磁盘与硬链接盘点](analysis/DISK_AUDIT_20260929.md)",
+              "to": "磁盘与硬链接盘点（原资产，本次未收录：`analysis/DISK_AUDIT_20260929.md`）"
+            },
+            {
+              "from": "[历史缓存价值与空间整理](analysis/CACHE_VALUE_AND_SPACE_RECLAMATION_20260930.md)",
+              "to": "历史缓存价值与空间整理（原资产，本次未收录：`analysis/CACHE_VALUE_AND_SPACE_RECLAMATION_20260930.md`）"
+            },
+            {
+              "from": "[近邻顶会方法与复用审查](analysis/RECENT_ADJACENT_LITERATURE_AND_REUSE_20260930.md)",
+              "to": "近邻顶会方法与复用审查（原资产，本次未收录：`analysis/RECENT_ADJACENT_LITERATURE_AND_REUSE_20260930.md`）"
+            },
+            {
+              "from": "[外审压缩包](delivery/external_audit_20260928/EXP-SIS_external_audit_20260928.zip)",
+              "to": "外审压缩包（原资产，本次未收录：`delivery/external_audit_20260928/EXP-SIS_external_audit_20260928.zip`）"
+            },
+            {
+              "from": "[ENG04 最终精简证据包](delivery/ENG04_final_evidence_20260930.zip)",
+              "to": "ENG04 最终精简证据包（原资产，本次未收录：`delivery/ENG04_final_evidence_20260930.zip`）"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/RESEARCH_CHARTER.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/RESEARCH_CHARTER.md",
+      "source_sha256": "a3b47832033582ac9d5aef88e3830b626b19c6c8bc3335d174fc50fc77904c25",
+      "published_sha256": "2e314882ce465535072db07882fd41a67e8efb3b98bd7e3433d0634e6f7635c3",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders",
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/CONFIRM_J0_V1_DECISION.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/CONFIRM_J0_V1_DECISION.md",
+      "source_sha256": "be0f2b7f442b9b40c9328b2e0aa6ceb2d8cd96086e964da69a9c8f4899dfb1e7",
+      "published_sha256": "7122fa769eadefdf4abaf8f7a4df08b0b19231158af2893166f508d8be542fd2",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/FIRST_BATCH_DECISION.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/FIRST_BATCH_DECISION.md",
+      "source_sha256": "fc7b36af72f97d30580a2391990fc84d5401c61e916e821f4751f26f35510e2d",
+      "published_sha256": "c593ae4bf1dc2314816e32d31c918e223002c51447d82bc5352b87e8b7062786",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/I1_S42_DECISION.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/I1_S42_DECISION.md",
+      "source_sha256": "8b9cda65f76f909f4d2b1838908a1d0e16031ff225fa5dfd5a4071a468bfb263",
+      "published_sha256": "318c258c94aacb3a66003e745f537af1cdc1163cefcaa4145d015eda6ed4468f",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/J0_S42_DECISION.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/J0_S42_DECISION.md",
+      "source_sha256": "f4027b29ce193dae1457d503c4040379eab21e4dd582a3cfd22beb5119a9272e",
+      "published_sha256": "723381b9ea9863db139cdac7d446bc28c2832a63e760c92f4fba2abf6fe6f072",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/J0_TWO_SEED_DECISION.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/J0_TWO_SEED_DECISION.md",
+      "source_sha256": "cdb8459916ef297afc00f233e83fa918418e68ddcf409cf6d31f26f932cc0174",
+      "published_sha256": "ec89944c4eec8bc0ac5603d0194aec0ca2b280b49cd440283a6b1abecdfe002f",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/METHOD_COMBINATION_REASSESSMENT_20260930.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/METHOD_COMBINATION_REASSESSMENT_20260930.md",
+      "source_sha256": "d750b2535184dea89586c9c763f1294dcae799c3e6062dc757c86a3976858c6f",
+      "published_sha256": "b543c7b7bee0356568853be4aa33d45a479ebc5e37b07aaa18ea3a44eb5ee074",
+      "transforms": [
+        {
+          "local_link_adaptations": [
+            {
+              "from": "[P1D 最终报告](../../diagnostics/p1d_engineering_qualification/FINAL_REPORT.md)",
+              "to": "[P1D 最终报告](../../../diagnostics/p1d_engineering_qualification/FINAL_REPORT.md)"
+            },
+            {
+              "from": "[三种子资格表](../../diagnostics/p1d_engineering_qualification/QUALIFICATION_RESULTS.md)",
+              "to": "[三种子资格表](../../../diagnostics/p1d_engineering_qualification/QUALIFICATION_RESULTS.md)"
+            },
+            {
+              "from": "[ENG02 裁决](../eng02_scale_capacity_small_object/ENG02_VERDICT.md)",
+              "to": "[ENG02 裁决](../../eng02_scale_capacity_small_object/ENG02_VERDICT.md)"
+            },
+            {
+              "from": "[ENG03 最终报告](../eng03_instance_quality_transfer/FINAL_RESEARCH_REPORT.md)",
+              "to": "[ENG03 最终报告](../../eng03_instance_quality_transfer/FINAL_RESEARCH_REPORT.md)"
+            },
+            {
+              "from": "[ENG04 原始配对表](../eng04_problem_led_quality_transfer/results/PAIRED_COMPARISONS.csv)",
+              "to": "[ENG04 原始配对表](../results/PAIRED_COMPARISONS.csv)"
+            }
+          ]
+        },
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/MINIMAL_PAPER_ASSET_REVIEW.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/MINIMAL_PAPER_ASSET_REVIEW.md",
+      "source_sha256": "4d6dc579fa27cac70c508663a774b26d5aa250a78a0aa96a2105d595ac1eb1d0",
+      "published_sha256": "be52bf3b1a4969c2dee61e9a981126ae4ae2825eaa6e564cef701a3346db97d2",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/NATIVE_S42_DECISION.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/NATIVE_S42_DECISION.md",
+      "source_sha256": "32e1796dccd0144475b1cfa3c61e68be738232b95e8b051645c47b735eece6f9",
+      "published_sha256": "03c5066a136b4780d0cbc8649f149a5e96c48c7c48674fb12c5e590023a4df25",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/confirm_j0_v1/J0_PAIRED_EFFECTS.png",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/confirm_j0_v1/J0_PAIRED_EFFECTS.png",
+      "source_sha256": "0bcd58f358a78a34429b41b72762f975149899c6e185abddd920e5f77062c603",
+      "published_sha256": "0bcd58f358a78a34429b41b72762f975149899c6e185abddd920e5f77062c603",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/confirm_j0_v1/PAIR_TABLE.csv",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/confirm_j0_v1/PAIR_TABLE.csv",
+      "source_sha256": "a32767a7f51c8f5d9d3b8a5a353e77ea01616961e87566073c3ff5aa11031572",
+      "published_sha256": "391d82255b83ea8a092e78772b1745217bb220152e6cba914a1ab58a6de8e97c",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/first_batch/PAIRED_METRICS.csv",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/first_batch/PAIRED_METRICS.csv",
+      "source_sha256": "e794046d2ac794c4de2a6e9ea0cc052a699de1565d3c7a78071c4381a4bf984f",
+      "published_sha256": "4bc3e504dd8e94daa0f20c32290e69d9121a77ba23ab9ad9fb3750829d940c93",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/analysis/j0_s128/PAIR_TABLE.csv",
+      "published": "engineering/eng04_problem_led_quality_transfer/analysis/j0_s128/PAIR_TABLE.csv",
+      "source_sha256": "9e3ccb66c505300d39191a2cb213fe64d09f43c21b5db103f106b5e766ecccab",
+      "published_sha256": "6928af460624ab6ff29baf101930c1a39aaabbb6d301dd22e38b8fa6f082f502",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/configs/CONFIRM_J0_V1.json",
+      "published": "engineering/eng04_problem_led_quality_transfer/configs/CONFIRM_J0_V1.json",
+      "source_sha256": "454c26594897bc2410c608852cf0f50d1e7ed469e2ca9a78e655b066aa442870",
+      "published_sha256": "228f8c04c0287020332409e7409326212a10150be7f9d48eedd15f7d33e84341",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/configs/DEVELOPMENT_V1.json",
+      "published": "engineering/eng04_problem_led_quality_transfer/configs/DEVELOPMENT_V1.json",
+      "source_sha256": "fd72a5f22d89e77fd2d6855a395b1743169a73b2a2123e67e7608276d0e2fa96",
+      "published_sha256": "3023d0b10e3f2e1139b3731d5fb5e2a76ef369cd24964d8c85106a48d4681af7",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/configs/DEVELOPMENT_V2.json",
+      "published": "engineering/eng04_problem_led_quality_transfer/configs/DEVELOPMENT_V2.json",
+      "source_sha256": "bdf618f51d0b9740ed539eca39d3ea17a9865e654d389b25a45d73ded26d7979",
+      "published_sha256": "bdf618f51d0b9740ed539eca39d3ea17a9865e654d389b25a45d73ded26d7979",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/configs/DEVELOPMENT_V3.json",
+      "published": "engineering/eng04_problem_led_quality_transfer/configs/DEVELOPMENT_V3.json",
+      "source_sha256": "3d96cfe6bc1530b3a9005798a70e92fbfcfdfe671ed961bbfb9faf3f29704c02",
+      "published_sha256": "3d96cfe6bc1530b3a9005798a70e92fbfcfdfe671ed961bbfb9faf3f29704c02",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/configs/NATIVE_S42_V1.json",
+      "published": "engineering/eng04_problem_led_quality_transfer/configs/NATIVE_S42_V1.json",
+      "source_sha256": "3cf106bb2fde511421fb0e04b738beb966aabfddc981395a4aa6642f4f3a0917",
+      "published_sha256": "0d2261bbec475649bd7ba009901b94ec486b98b744bfb9d9d890b4adbaf5cd50",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/configs/REPLICATION_J0_V1.json",
+      "published": "engineering/eng04_problem_led_quality_transfer/configs/REPLICATION_J0_V1.json",
+      "source_sha256": "dbbb84e44994159363b4362e949e724a51766044e3e538b0495c5aafc07a9300",
+      "published_sha256": "dbbb84e44994159363b4362e949e724a51766044e3e538b0495c5aafc07a9300",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/paper/CLAIM_EVIDENCE.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/paper/CLAIM_EVIDENCE.md",
+      "source_sha256": "dae0607fe81d5427f35b864b69a39daa0e716f6ca36be21083c1242a378bf3cd",
+      "published_sha256": "43b6bd2e0e37528015f6ac32b754a3c09a01091d566620a5afa54eb21cbc9810",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/paper/METHOD_DRAFT.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/paper/METHOD_DRAFT.md",
+      "source_sha256": "2baee9774b500b375ed739ec55d160cb0f90b567252cf6226f5a4eebf951070e",
+      "published_sha256": "477ea1efbbbc0b070c7a3d23ba8b6064bd4f7df2214e02b674ce384c80067b14",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/paper/RESULTS_DRAFT.md",
+      "published": "engineering/eng04_problem_led_quality_transfer/paper/RESULTS_DRAFT.md",
+      "source_sha256": "61847018b5846ff1c7ae2f7d7e6bb7cc984e63eb966e1b5cb2876a01fe5761c9",
+      "published_sha256": "a44e02eb0c33ce40e860b6f80321242d46d49e60abebcff44f9d81c84fa37a74",
+      "transforms": [
+        "prepend historical-record notice"
+      ]
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/results/PAIRED_COMPARISONS.csv",
+      "published": "engineering/eng04_problem_led_quality_transfer/results/PAIRED_COMPARISONS.csv",
+      "source_sha256": "115fb552f887c46d9752956566d1b071bb18e2e6a70ea0d85d9fb6c99bc28efc",
+      "published_sha256": "ed6d5226761f7aa108a41a416f56a6fc59be472fd7d489dde6110f0b07787c33",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/results/PAIRED_SUMMARY.csv",
+      "published": "engineering/eng04_problem_led_quality_transfer/results/PAIRED_SUMMARY.csv",
+      "source_sha256": "595d1b9f7a0f7f7371870367f488b32c8b0965480312fcad6912e812388a26b3",
+      "published_sha256": "094cd6ef27a2b6b23b9ce4512ac369b06a526ed3dd7b4be5c06cc99e0311cd24",
+      "transforms": []
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/results/RESULTS_MASTER.csv",
+      "published": "engineering/eng04_problem_led_quality_transfer/results/RESULTS_MASTER.csv",
+      "source_sha256": "dba6018752802f5e28f25f7eaf571d82d9cfacda771af04c1015119b5919433d",
+      "published_sha256": "9a7291de069b9d8272e97ce6fb1ab631903ef6a38d97160daad51a55d56a4c3f",
+      "transforms": [
+        "replace machine-specific directory prefixes with documented path placeholders"
+      ]
+    }
+  ]
+}

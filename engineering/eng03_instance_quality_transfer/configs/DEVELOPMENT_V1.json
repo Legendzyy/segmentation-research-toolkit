@@ -1,0 +1,17 @@
+{
+  "experiment_id": "EXP-SIS-ENG03",
+  "package": "output_KD_development_v1",
+  "status": "FROZEN_FOR_FIRST_DEVELOPMENT_PACKAGE",
+  "teacher_checkpoint": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/runs/A2_s42/weights/last.pt",
+  "student_initialization": "${RESEARCH_ROOT}/diagnostics/p1d_engineering_qualification/weights/yolo11n-seg.pt",
+  "epochs": 60,
+  "microbatch": 8,
+  "checkpoint_policy": "last scheduled epoch for both variants",
+  "native_recipe": "ENG02 K1/K2 640/AdamW family",
+  "variants": {
+    "D0": {"mode": "direct", "lambda_cls": 1.0, "lambda_box": 5.0, "lambda_mask": 1.0},
+    "Q0": {"mode": "selective", "lambda_cls": 1.0, "lambda_box": 5.0, "lambda_mask": 1.0}
+  },
+  "method_note": "D0 plain output KD; Q0 adds detached task-specific GT-quality selection. Frozen before either formal run after two non-scientific short training smokes and a train-only numeric audit. Native no-op loss difference 0, empty-GT KD 0, teacher gradient 0, student KD gradient positive, one target overlay inspected. Checkpoint selection is last epoch for both.",
+  "test_access": false
+}

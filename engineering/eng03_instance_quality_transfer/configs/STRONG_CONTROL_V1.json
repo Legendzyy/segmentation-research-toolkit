@@ -1,0 +1,27 @@
+{
+  "experiment_id": "EXP-SIS-ENG03",
+  "package": "same_seed_same_budget_native_and_feature_KD_bridge",
+  "status": "FROZEN_BEFORE_FORMAL_CONTROL",
+  "reason": "D0 has three seeds but historical native A0 and ENG02 K1 have only seed42; R0 ranked-anchor development was negative and is stopped",
+  "seed": 2024,
+  "order": ["N0_s2024", "K1_s2024"],
+  "epochs": 60,
+  "microbatch": 8,
+  "imgsz": 640,
+  "checkpoint_policy": "last scheduled epoch 60",
+  "student_yaml": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/configs/yolo11n-eng02.yaml",
+  "student_initialization": "${RESEARCH_ROOT}/diagnostics/p1d_engineering_qualification/weights/yolo11n-seg.pt",
+  "teacher_checkpoint": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/runs/A2_s42/weights/last.pt",
+  "K1_source_implementation": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/src/kd_model.py; read-only import of frozen ENG02 feature distiller",
+  "variants": {
+    "N0": {"mode": "native_no_KD"},
+    "K1": {"mode": "vanilla_feature_MSE", "lambda_fd": 1.0, "neck_layers": [16, 19, 22], "training_only_adapters": "three 1x1 convolutions"}
+  },
+  "recipe": "Same full-network 60epoch input640 AdamW/batch8/nbs32/final last and augmentation kwargs as ENG03 D0 and ENG02 K1; no validation-driven checkpoint selection",
+  "primary_comparison": "Within seed2024, D0 versus N0 and K1 on independent full254 mask AP; historical seed42 rows remain development context",
+  "secondary": ["AP50", "AP75", "AP90", "small AP", "coverage", "common-GT shape", "training cost"],
+  "adaptive_policy": "One paired control seed first. More seeds only if a coherent near-finalist method merits matched-seed verification; no result-driven rescue.",
+  "preflight": "Both ENG03-owned one-epoch/four-train-image N0 and K1 engineering smoke runs exited zero before formal freeze; smoke auto-validation scores excluded from scientific selection",
+  "training_budget_units_added": 2,
+  "test_access": false
+}

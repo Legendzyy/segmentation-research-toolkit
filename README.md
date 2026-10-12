@@ -1,75 +1,53 @@
 # Segmentation Research Toolkit
 
-面向计算机视觉研究的**问题定义、机制分析、实验组织与证据交付骨架**。
+这里公开的是一个实例分割研究项目的**原生研究记录**：从具体问题出发，在 YOLO 分割基线上做结构与训练机制改进，记录每次设计、实验、消融、结果与下一步判断。供学弟学妹参考真实科研怎么推进。
 
-这个仓库整理了已结束的实例分割研究阶段中的可复用经验：如何区分 oracle 空间与可部署收益，如何设计能够区分替代解释的对照，如何保留正负结果，以及如何把研究问题组织成一篇有证据支撑的论文。
+主体来自原项目的 **P1A–P1F、ENG01–ENG04 十个阶段**，沿用原目录名。包含 95 份原始文档、17 份冻结配置、10 张真实汇总表和 5 张原始结果图。既保留有价值的正向信号，也保留错误假设、失败尝试和没有完成的验证。正文数值没有重编，没有虚构教学实验。
 
-它包含研究流程模板、方法设计笔记、失败案例练习、完整填写的教学示例，以及无需深度学习环境的阶段创建、配对汇总与审计工具。没有附带训练器、模型实现、数据集或权重；不构成历史实验的一键复现包。工具在合成夹具和公开的四行汇总表上验证，未重新运行历史训练或评价。
+## 先看工程研究怎么做
 
-**第一次来，先读 [从零开始指南](docs/START_HERE.md)**：克隆、运行、预期输出、创建阶段及修改后的 CI 更新都有具体步骤。不熟悉术语时查 [术语表](docs/GLOSSARY.md)。
+研究主线是：**具体问题场景 → 合适的强 benchmark 与新近强基线 → 定位实际失效模式 → 有针对性的架构/训练机制 → 对比与消融 → 解释模块贡献和质量、成本取舍 → 组织论文。**
 
-## 从哪里开始
+先读 [按原项目推进研究](docs/START_HERE.md)，再读 [工程论文设计思路](docs/PAPER_DESIGN_WORKFLOW.md)。后者是依据本项目整理的编辑说明；下面的阶段文件才是当时的原始记录。
 
-| 你的需要 | 入口 |
-|---|---|
-| 跑通一次流程，知道模板怎样填 | [完整教学示例](examples/synthetic_study/README.md) |
-| 学习失败与错误方向如何判断 | [五个历史案例与练习](docs/FAILURE_CASES.md) |
-| 把一个具体问题组织成论文 | [论文设计工作流](docs/PAPER_DESIGN_WORKFLOW.md) |
-| 借鉴机制诊断与最小对照 | [方法设计库](docs/METHOD_DESIGNS.md) |
-| 看已结束研究留下了什么 | [历史结论与边界](docs/RESEARCH_LESSONS.md) |
-| 搭建自己的科研工程 | [仓库架构与迁移指南](docs/REPOSITORY_ARCHITECTURE.md) |
-| 统一 endpoint、coverage 与统计角色 | [评价契约](docs/EVALUATION_CONTRACTS.md) |
-| 理解公开材料的来源与缺口 | [来源说明](docs/PROVENANCE.md) |
+| 研究问题 | 实际设计与原始入口 | 结果怎么看 |
+|---|---|---|
+| 增加细节信息和边界监督，能否改善实例 mask？ | [ENG01 六变体结构/监督契约](engineering/eng01_semantic_detail_boundary/ENGINEERING_CONTRACT.md) | [单 seed 矩阵](engineering/eng01_semantic_detail_boundary/results/SEED42_MATRIX.csv)、[多 seed 复验](engineering/eng01_semantic_detail_boundary/results/REPLICATION_TABLE.csv)、[完整报告](engineering/eng01_semantic_detail_boundary/FINAL_ENGINEERING_REPORT.md) |
+| 小目标还有多少提升空间？先加分辨率、容量还是蒸馏？ | [ENG02 问题剖面](engineering/eng02_scale_capacity_small_object/ERROR_PROFILE_ENG02.md)、[筛选契约](engineering/eng02_scale_capacity_small_object/contracts/SCREENING_CONTRACT.md) | [容量/尺度与 KD 裁决](engineering/eng02_scale_capacity_small_object/ENG02_VERDICT.md) |
+| 强教师的分类、框和 mask 信息怎样传给轻量学生？ | [ENG03 实例质量迁移方法定义](engineering/eng03_instance_quality_transfer/METHOD_SPEC.md) | [18 行结果主表](engineering/eng03_instance_quality_transfer/RESULTS_MASTER.csv)、[强对照决策](engineering/eng03_instance_quality_transfer/analysis/STRONG_CONTROL_V1_DECISION.md)、[报告](engineering/eng03_instance_quality_transfer/FINAL_RESEARCH_REPORT.md) |
+| 目标对应关系、质量权重与任务分工，哪一项真有用？ | [ENG04 问题与设计迭代](engineering/eng04_problem_led_quality_transfer/EVIDENCE_AND_METHOD_LOG.md)、[方法定义](engineering/eng04_problem_led_quality_transfer/METHOD_SPEC.md) | [模块组合复盘](engineering/eng04_problem_led_quality_transfer/analysis/METHOD_COMBINATION_REASSESSMENT_20260930.md)、[最终确认](engineering/eng04_problem_led_quality_transfer/analysis/CONFIRM_J0_V1_DECISION.md) |
+| 更细的特征来源、更密的 prototype 输出，贡献如何分开？ | [P1F 六变体 factorial 实现契约](diagnostics/p1f_thin_prototype_attribution/FACTORIAL_IMPLEMENTATION_CONTRACT.md) | [source × lattice、插值与算力控制](diagnostics/p1f_thin_prototype_attribution/FINAL_REPORT_P1F.md) |
+| 简单机制是否已经解释了复杂模块的收益？ | [P1D 头部特化契约](diagnostics/p1d_engineering_qualification/SPECIALIZATION_CONTRACT.md) | [M0/M1/M2/M3 与 fresh75 对照](diagnostics/p1d_engineering_qualification/FINAL_REPORT.md) |
 
-## 快速使用
+不必先读完所有诊断。做架构改进可从 ENG01 开始；做蒸馏可从 ENG02–04 开始；遇到“局部指标很好、完整 AP 不涨”时，再读 P1B/P1C/P1F。全部阶段见 [诊断索引](diagnostics/README.md)和[工程索引](engineering/README.md)。
 
-需要 Python 3.10 或更新版本，仅使用标准库。下载并进入仓库根目录后运行：
-
-```bash
-python -m unittest discover -s tests -v
-python tools/paired_summary.py examples/synthetic_study/paired_metrics.csv
-python tools/manifest.py verify . RELEASE_MANIFEST.json
-```
-
-第二条使用完全虚构的教学表，预期均值为 +0.5 pp，2 正 1 负，不构成真实模型结论。第三条验证已发布文本，预期 PASS。真实历史聚合表示例可用 `python tools/paired_summary.py evidence/paired_confirmation.csv` 另行核对。详细字段与限制见 [工具说明](tools/README.md)。
-
-新研究可以使用 GitHub 的 **Use this template** 创建自己的仓库，再运行 `python tools/new_stage.py diagnostics pilot01` 生成空阶段。先填写 `CURRENT_PROGRESS.md` 和实验协议，再向 `src/` 接入自己的模型、数据适配器和评价实现。空阶段配置为 `DRAFT`；不适用项需要解释，未决定项保留 `null`。具体步骤见从零开始指南。
+## 原仓库的组织方式
 
 ```text
-docs/                    # 研究方法、结论与使用说明
-templates/               # 协议、决策、实验日志、claim 映射模板
-examples/                # 完整填写的虚构教学流程
-diagnostics/             # 冻结模型上的离线诊断阶段
-engineering/             # 由明确假设驱动的训练/适配阶段
-src/                     # 使用者实现模型、数据与评价接口
-configs/                 # 可检查的实验定义；示例为 DRAFT
-evidence/                # 少量历史聚合证据，不含样本级数据
-tools/                   # 阶段创建、配对汇总、文本资产 SHA256 清单
-tests/                   # 工具契约测试，不代表科研有效性测试
-.github/workflows/       # 工具与文本清单 CI
+diagnostics/
+  p1a_coef_refit/                     # 系数拟合与数值实现
+  p1b_publishability_triage/          # 可学习性、对照与完整 AP
+  p1c_objective_alignment/            # 训练目标与部署评价
+  p1d_engineering_qualification/      # 头部特化与同预算强对照
+  p1e_structural_bottleneck_triage/    # thin 结构瓶颈与下一阶段蓝图
+  p1f_thin_prototype_attribution/     # source × lattice 归因
+engineering/
+  eng01_semantic_detail_boundary/     # 细节分支、注意力、边界监督
+  eng02_scale_capacity_small_object/  # 容量、分辨率与 feature KD
+  eng03_instance_quality_transfer/    # 输出 KD 与质量选择
+  eng04_problem_led_quality_transfer/ # 对应关系、权重与任务分工
+docs/                                # 本次整理的阅读入口与论文思路
+evidence/NATIVE_SOURCE_MAP.json       # 每份原件与公开文件的 hash/改动记录
 ```
 
-## 核心研究路径
+阶段内部保留自己的 `PROTOCOL` / `RESEARCH_CHARTER`、方法定义、`configs/`、`analysis/`、`results/`、`paper/`、`EXECUTION_JOURNAL`。文件名没有强行统一，旧阶段也没有被改成新模板。怎样借用这套组织方式，见 [原生架构与复用](docs/REPOSITORY_ARCHITECTURE.md)。
 
-```mermaid
-flowchart LR
-    A[具体任务与失败现象] --> B[竞争解释]
-    B --> C[最小设计与强对照]
-    C --> D[开发验证]
-    D --> E[冻结预定比较]
-    E --> F[独立确认]
-    F --> G[有边界的结论]
-    D --> H[保留失败与修订记录]
-    F --> H
-```
+## 使用范围
 
-允许从成熟方法出发做有依据的组合，也允许提出进取性的假设；关键是把已有组件、设计差异、实验证据和贡献范围分别说清楚。复杂设计必须接受简单强对照，负结果也应保留完整解释空间。
+可以直接阅读、复用研究组织方式、方法表述和消融设计；这是研究档案的精选公开版，**尚不具备独立训练复现条件**。未附训练器、数据/标注、权重、预测缓存、样本清单及上游第三方源码。原记录中的运行命令和路径保留为历史背景；缺失依赖不会靠执行这些命令自动补齐。
 
-## 发布范围
+历史 Blueberry full254 数值属于项目 development 协议，不是社区官方 benchmark 排名。本项目没有完成“强公开 benchmark 上稳定胜出”的完整证据链；这项缺口在原报告里保留。旧报告中的 GO/STOP、预算和授权都属于当时阶段，不是要求读者照搬的通用规定。
 
-- 发布：已结束阶段的结论摘要、通用设计与验证思路、可复用目录结构、模板和独立编写的小工具。
-- 保留私有：本次明确排除的未发表项目方案、实现与数据，以及原始图像与标注、样本身份清单、checkpoint、预测缓存、设备日志和凭据。已结束研究的方法尝试、失败与错误假设可以作为教学材料讨论。本版也不附带第三方模型源码。
-- 历史数值是本地 development 协议下的结果，不是官方 benchmark 排名。本仓库不宣称提出了新的有效分割算法。
-- 本仓库代码与文档采用 [MIT 许可证](LICENSE)，允许保留许可与署名后复用、修改和商用；未发布的原研究资产不在授权范围内。第三方依赖和上游方法仍遵循各自许可。
+发布前只做资料核对，没有重跑科研实验。检查公开文件完整性可运行 `python tools/verify_archive.py`（Python 3.10+，标准库）。详细来源、改动及未收录内容见 [发布说明](docs/PROVENANCE.md)。已明确排除的在研论文材料不在本仓库发布与许可范围内。
 
-建议先阅读 [贡献说明](CONTRIBUTING.md)，避免把探索结果、缺失证据或尚未执行的方案写成已完成事实。
+本仓库公开的自有文档与维护脚本采用 [MIT](LICENSE)。保留原作者与上游方法的署名；引用既有模块不改变它们的来源和许可。

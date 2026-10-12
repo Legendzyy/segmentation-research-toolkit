@@ -1,0 +1,48 @@
+{
+  "experiment_id": "EXP-SIS-20260924-ENG02",
+  "status": "FROZEN",
+  "stage": "B KD development",
+  "branch_decision_sha256": "56259afd4615b02e225620f16e49a433f893503ad3c8e46981c33edebc62c5c5",
+  "source_stage_a_config_sha256": "2af4308734f538d515a7699721b10bbffe802589d428f094cadbb1bb2f3d5f6a",
+  "kd_contract_sha256": "5ddfd135b35d04b691a00346566dcd7031ff43c77d53cebba2a3beafb3f3e63f",
+  "kd_model_sha256": "25b67df07c3e683b8d089792ae3e2d301338837a7798119b16160c723e10cc77",
+  "loss_probe_sha256": "dac631b089fb87f66560b2950ef372701ac0d999bb6ff4107a09f91ee3b3ff12",
+  "teacher_checkpoint": "${RESEARCH_ROOT}\\engineering\\eng02_scale_capacity_small_object\\runs\\A2_s42\\weights\\last.pt",
+  "teacher_checkpoint_sha256": "cabe6d43241259ad9f90596be1a55c4c4f346ec452863f636c1479494328e373",
+  "student_initialization": "${RESEARCH_ROOT}\\diagnostics\\p1d_engineering_qualification\\weights\\yolo11n-seg.pt",
+  "student_initialization_sha256": "55ed65c56c91713d23e8402371c6c49a6fd84f257f7dce452e8d70e41dcbe152",
+  "student_yaml_sha256": "5d42fcc55cc2feb837198c17e57c5d54f7d3781db78faa15e0d029842f9633a7",
+  "variants": {
+    "K1": {
+      "mode": "vanilla_feature_MSE"
+    },
+    "K2": {
+      "mode": "foreground_weighted_feature_MSE",
+      "foreground_weight": 2.0,
+      "background_weight": 1.0,
+      "normalize_spatial_mean": true,
+      "region_source": "post_augmentation_training_GT_boxes"
+    }
+  },
+  "neck_layers": [
+    16,
+    19,
+    22
+  ],
+  "adapters": "three trainable single 1x1 convolutions; training-only",
+  "loss_reduction": "mean channels and spatial per level, then mean three levels",
+  "lambda_fd": 1.0,
+  "lambda_selection": "single training-only batch, target 5 percent of native loss rounded one significant digit",
+  "seed": 42,
+  "epochs": 60,
+  "imgsz": 640,
+  "microbatch": 8,
+  "nbs": 32,
+  "recipe_from": "configs/FROZEN_STAGE_A.json",
+  "checkpoint_policy": "final scheduled epoch 60",
+  "evaluation": "same independent full254 input640 evaluator",
+  "test_access": false,
+  "shared_gpu": true,
+  "created_utc": "2026-09-24T20:18:05.162967+08:00",
+  "pre_formal_engineering_revision": "After two preserved K1 smoke failures in Ultralytics validation bookkeeping, eval-mode fd_loss key and scalar shape were corrected; training-mode loss and frozen lambda unchanged."
+}

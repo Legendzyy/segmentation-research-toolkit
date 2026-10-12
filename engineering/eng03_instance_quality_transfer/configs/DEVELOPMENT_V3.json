@@ -1,0 +1,32 @@
+{
+  "experiment_id": "EXP-SIS-ENG03",
+  "package": "ranked_TAL_mask_anchor_development_v3",
+  "status": "FROZEN_BEFORE_FORMAL_R0",
+  "decision_evidence": [
+    "analysis/SEED128_ADAPTIVE_DECISION.md",
+    "analysis/TRAIN_MASK_GATE_ALIGNMENT_DECISION.md"
+  ],
+  "teacher_checkpoint": "${RESEARCH_ROOT}/engineering/eng02_scale_capacity_small_object/runs/A2_s42/weights/last.pt",
+  "student_initialization": "${RESEARCH_ROOT}/diagnostics/p1d_engineering_qualification/weights/yolo11n-seg.pt",
+  "seed": 2024,
+  "epochs": 60,
+  "microbatch": 8,
+  "checkpoint_policy": "last scheduled epoch 60",
+  "native_recipe": "Identical to ENG03 DEVELOPMENT_V1/V2 640/AdamW family; full-network native plus KD",
+  "variants": {
+    "R0": {
+      "mode": "rank_mask_selective",
+      "lambda_cls": 1.0,
+      "lambda_box": 5.0,
+      "lambda_mask": 1.0
+    }
+  },
+  "single_change_vs_M0": "For each student-TAL-positive training GT, select the mask KD representative anchor by highest detached student class score for that GT instead of distance to GT box center. Keep the same teacher mask at that grid anchor and same detached teacher-better-than-student mask-IoU gate; detector KD stays direct.",
+  "comparison": "D0_s2024 same-seed direct-output baseline already trained/evaluated; M0_s42/s128 are exploratory context, not a paired R0 claim",
+  "primary_endpoint": "full254 input640 mask AP using scheduled last checkpoint",
+  "secondary_diagnostics": ["AP50", "AP75", "AP90", "small AP", "same-class score-.25 coverage", "common-GT shape", "training cost"],
+  "adaptive_seed_policy": "One development seed only. Consider a second paired seed only after a substantive coherent signal; reserve a third for a retained near-finalist. No result-driven checkpoint or threshold choice.",
+  "preflight_evidence": ["analysis/NUMERIC_AUDIT_V3.json", "runs/smoke_R0_s2024 (one epoch/four train images; engineering smoke only)"],
+  "training_budget_units_added": 1,
+  "test_access": false
+}

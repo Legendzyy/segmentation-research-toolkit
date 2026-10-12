@@ -1,0 +1,17 @@
+{
+  "experiment_id": "EXP-SIS-ENG03",
+  "package": "direct_vs_mask_selective_output_KD_paired_replication_v1",
+  "status": "FROZEN_BEFORE_NEW_SEED_TRAINING",
+  "decision_evidence": "analysis/DEVELOPMENT_V2_DECISION.md",
+  "variants": ["D0", "M0"],
+  "new_seeds": [128, 2024],
+  "completed_development_seed": 42,
+  "order": ["D0_s128", "M0_s128", "D0_s2024", "M0_s2024"],
+  "scientific_recipe": "Reuse D0 from DEVELOPMENT_V1.json and M0 from DEVELOPMENT_V2.json without changing teacher, student initialization, native/KD losses, weights, 60 epochs, batch8, augmentation, optimizer, scheduler, 640 input or last-epoch selection. Only seed changes.",
+  "primary_comparison": "paired M0 minus D0 full254 mask AP across seeds 42/128/2024",
+  "secondary_comparisons": ["AP_small_input640", "AP90", "fixed-score same-class coverage", "common-GT conditional mask quality"],
+  "claim_boundary": "seed42 was used for development selection; new seeds are held-out replication within Blueberry development val, not test or external confirmation",
+  "training_budget_units_added_max": 4,
+  "checkpoint_policy": "last scheduled epoch for every variant/seed",
+  "test_access": false
+}

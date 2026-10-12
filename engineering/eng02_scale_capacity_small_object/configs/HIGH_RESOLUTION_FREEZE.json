@@ -1,0 +1,41 @@
+{
+  "status": "FROZEN",
+  "chosen_imgsz": 896,
+  "reason": "First-priority 896 passes a real augmented batch-8 native n forward, official segmentation loss and backward on the shared 8GB RTX4060; no validation selection",
+  "microbatch": 8,
+  "gradient_accumulation_nominal": 4,
+  "effective_batch_nominal": 32,
+  "note": "Ultralytics nbs=32 adjusts accumulation during warmup; nominal batch only. BN sees microbatch 8, matching A0, but resolution changes activation statistics.",
+  "estimated_runtime_hours_range": [
+    3.5,
+    7.0
+  ],
+  "estimate_basis": "ENG01 A0 60 epochs 2.36 process hours at 640 batch8; 896 has 1.96x input pixels and shared-GPU contention",
+  "gpu_probe": {
+    "status": "PASS",
+    "scale": "n",
+    "actual_scale": "n",
+    "parameters": 2842998,
+    "imgsz": 896,
+    "microbatch": 8,
+    "loss": 60.48027801513672,
+    "terms": {
+      "box_loss": 0.5793539881706238,
+      "seg_loss": 2.4799230098724365,
+      "cls_loss": 3.455958366394043,
+      "dfl_loss": 1.0447993278503418,
+      "sem_loss": 0.0
+    },
+    "elapsed_step_s": 2.2403209999902174,
+    "peak_allocated_vram_bytes": 2843270656,
+    "peak_reserved_vram_bytes": 3286237184,
+    "shared_gpu": true,
+    "isolated_latency": false,
+    "test_access": false
+  },
+  "shared_gpu": true,
+  "isolated_latency": false,
+  "validation_seen_for_selection": false,
+  "test_access": false,
+  "created_utc": "2026-09-24T05:33:13.560550+00:00"
+}
