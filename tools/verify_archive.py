@@ -19,6 +19,12 @@ def verify():
     if len(names) != 127:
         errors.append(f'expected 127 selected native files, found {len(names)}')
     selected = set(names)
+    code_index = ROOT / 'evidence/CODE_SOURCE_MAP.json'
+    if code_index.is_file():
+        for entry in json.loads(code_index.read_text(encoding='utf-8'))['files']:
+            path = ROOT / entry['published']
+            if not path.is_file() or hashlib.sha256(path.read_bytes()).hexdigest() != entry['published_sha256']:
+                errors.append(f'ported source hash mismatch: {entry["published"]}')
     counts = {}
     csv_rows = {}
     for entry in index['files']:
@@ -58,7 +64,7 @@ def verify():
 
     for path in ROOT.rglob('*'):
         relative = path.relative_to(ROOT)
-        if any(part in {'.git', '__pycache__', '.venv', 'work'} for part in relative.parts):
+        if any(part in {'.git', '__pycache__', '.venv', 'work', 'build', 'dist'} or part.endswith('.egg-info') for part in relative.parts):
             continue
         if not path.is_file():
             continue

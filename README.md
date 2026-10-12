@@ -1,53 +1,55 @@
 # Segmentation Research Toolkit
 
-这里公开的是一个实例分割研究项目的**原生研究记录**：从具体问题出发，在 YOLO 分割基线上做结构与训练机制改进，记录每次设计、实验、消融、结果与下一步判断。供学弟学妹参考真实科研怎么推进。
+实例分割研究代码与阶段档案。提供原生方法的训练、COCO mask 评价、预测重放和配对消融入口；保留 P1A–P1F、ENG01–ENG04 的历史设计与结果。
 
-主体来自原项目的 **P1A–P1F、ENG01–ENG04 十个阶段**，沿用原目录名。包含 95 份原始文档、17 份冻结配置、10 张真实汇总表和 5 张原始结果图。既保留有价值的正向信号，也保留错误假设、失败尝试和没有完成的验证。正文数值没有重编，没有虚构教学实验。
+| 入口 | 内容 |
+|---|---|
+| [安装与首次运行](docs/START_HERE.md) | 在公开 COCO8-seg 上完成训练 → 评价 → 消融汇总 |
+| [数据集获取与接入](docs/DATASETS.md) | Mega_Blueberry、MinneApple、COCO8-seg 的官方来源及数据角色 |
+| [方法与运行契约](docs/RUNTIME.md) | 25 个入口、配置字段、评价定义、输出与限制 |
+| [Agent 状态](PROJECT_STATE.json) / [协作规则](AGENTS.md) | 当前能力、检查命令、续接顺序 |
+| [工程研究主线](docs/PAPER_DESIGN_WORKFLOW.md) | 场景、强基线、机制、消融、trade-off 与证据 |
+| [工程阶段](engineering/README.md) / [诊断阶段](diagnostics/README.md) | 原始协议、方法、日志、图表与结论 |
 
-## 先看工程研究怎么做
+## 可运行方法
 
-研究主线是：**具体问题场景 → 合适的强 benchmark 与新近强基线 → 定位实际失效模式 → 有针对性的架构/训练机制 → 对比与消融 → 解释模块贡献和质量、成本取舍 → 组织论文。**
-
-先读 [按原项目推进研究](docs/START_HERE.md)，再读 [工程论文设计思路](docs/PAPER_DESIGN_WORKFLOW.md)。后者是依据本项目整理的编辑说明；下面的阶段文件才是当时的原始记录。
-
-| 研究问题 | 实际设计与原始入口 | 结果怎么看 |
+| 家族 | 变体 | 实现 |
 |---|---|---|
-| 增加细节信息和边界监督，能否改善实例 mask？ | [ENG01 六变体结构/监督契约](engineering/eng01_semantic_detail_boundary/ENGINEERING_CONTRACT.md) | [单 seed 矩阵](engineering/eng01_semantic_detail_boundary/results/SEED42_MATRIX.csv)、[多 seed 复验](engineering/eng01_semantic_detail_boundary/results/REPLICATION_TABLE.csv)、[完整报告](engineering/eng01_semantic_detail_boundary/FINAL_ENGINEERING_REPORT.md) |
-| 小目标还有多少提升空间？先加分辨率、容量还是蒸馏？ | [ENG02 问题剖面](engineering/eng02_scale_capacity_small_object/ERROR_PROFILE_ENG02.md)、[筛选契约](engineering/eng02_scale_capacity_small_object/contracts/SCREENING_CONTRACT.md) | [容量/尺度与 KD 裁决](engineering/eng02_scale_capacity_small_object/ENG02_VERDICT.md) |
-| 强教师的分类、框和 mask 信息怎样传给轻量学生？ | [ENG03 实例质量迁移方法定义](engineering/eng03_instance_quality_transfer/METHOD_SPEC.md) | [18 行结果主表](engineering/eng03_instance_quality_transfer/RESULTS_MASTER.csv)、[强对照决策](engineering/eng03_instance_quality_transfer/analysis/STRONG_CONTROL_V1_DECISION.md)、[报告](engineering/eng03_instance_quality_transfer/FINAL_RESEARCH_REPORT.md) |
-| 目标对应关系、质量权重与任务分工，哪一项真有用？ | [ENG04 问题与设计迭代](engineering/eng04_problem_led_quality_transfer/EVIDENCE_AND_METHOD_LOG.md)、[方法定义](engineering/eng04_problem_led_quality_transfer/METHOD_SPEC.md) | [模块组合复盘](engineering/eng04_problem_led_quality_transfer/analysis/METHOD_COMBINATION_REASSESSMENT_20260930.md)、[最终确认](engineering/eng04_problem_led_quality_transfer/analysis/CONFIRM_J0_V1_DECISION.md) |
-| 更细的特征来源、更密的 prototype 输出，贡献如何分开？ | [P1F 六变体 factorial 实现契约](diagnostics/p1f_thin_prototype_attribution/FACTORIAL_IMPLEMENTATION_CONTRACT.md) | [source × lattice、插值与算力控制](diagnostics/p1f_thin_prototype_attribution/FINAL_REPORT_P1F.md) |
-| 简单机制是否已经解释了复杂模块的收益？ | [P1D 头部特化契约](diagnostics/p1d_engineering_qualification/SPECIALIZATION_CONTRACT.md) | [M0/M1/M2/M3 与 fresh75 对照](diagnostics/p1d_engineering_qualification/FINAL_REPORT.md) |
+| Native | YOLO11 n/s | 固定版本的上游网络；n 为学生，s 可训练为教师 |
+| ENG01 | E0–E5 | detail、MLCA、gate、训练期 boundary head 及其组合 |
+| ENG02 | K1/K2 | 普通/前景加权 feature KD |
+| ENG03 | D0/Q0/M0/C0/R0/F0 | 输出 KD、任务门控、代表 anchor 与 feature 组合 |
+| ENG04 | X0/I0/I1/J0 | CrossKD 适配、GT-linked 迁移及检测/mask 分工 |
+| P1F | F00/F10/F01/F11/CUP/CCOMP | source × lattice、插值和算力控制 |
 
-不必先读完所有诊断。做架构改进可从 ENG01 开始；做蒸馏可从 ENG02–04 开始；遇到“局部指标很好、完整 AP 不涨”时，再读 P1B/P1C/P1F。全部阶段见 [诊断索引](diagnostics/README.md)和[工程索引](engineering/README.md)。
+方法类来自已结束阶段，保留原计算；运行层使用显式路径和数据 manifest。历史配方与移植后的新运行分开记录，不宣称恢复原数据划分或复现旧表数值。
 
-## 原仓库的组织方式
+## 最短运行路径
 
-```text
-diagnostics/
-  p1a_coef_refit/                     # 系数拟合与数值实现
-  p1b_publishability_triage/          # 可学习性、对照与完整 AP
-  p1c_objective_alignment/            # 训练目标与部署评价
-  p1d_engineering_qualification/      # 头部特化与同预算强对照
-  p1e_structural_bottleneck_triage/    # thin 结构瓶颈与下一阶段蓝图
-  p1f_thin_prototype_attribution/     # source × lattice 归因
-engineering/
-  eng01_semantic_detail_boundary/     # 细节分支、注意力、边界监督
-  eng02_scale_capacity_small_object/  # 容量、分辨率与 feature KD
-  eng03_instance_quality_transfer/    # 输出 KD 与质量选择
-  eng04_problem_led_quality_transfer/ # 对应关系、权重与任务分工
-docs/                                # 本次整理的阅读入口与论文思路
-evidence/NATIVE_SOURCE_MAP.json       # 每份原件与公开文件的 hash/改动记录
+完成[安装](docs/START_HERE.md)后，在仓库根目录执行：
+
+```bash
+python -m research_toolkit fetch-smoke --output work/coco8
+python -m research_toolkit matrix --config configs/runnable/smoke_matrix.json --data work/coco8/prepared/data.yaml --output work/smoke_matrix
+python -m research_toolkit replay --evaluation work/smoke_matrix/native_s42_eval
 ```
 
-阶段内部保留自己的 `PROTOCOL` / `RESEARCH_CHARTER`、方法定义、`configs/`、`analysis/`、`results/`、`paper/`、`EXECUTION_JOURNAL`。文件名没有强行统一，旧阶段也没有被改成新模板。怎样借用这套组织方式，见 [原生架构与复用](docs/REPOSITORY_ARCHITECTURE.md)。
+输出包括两次真实小规模训练的 checkpoint、评价预测、指标和 `work/smoke_matrix/summary/paired.csv`。COCO8-seg 仅用于工程验证；一轮随机初始化结果不能作为方法有效性证据。
 
-## 使用范围
+正式数据接入后，可使用 `configs/runnable/eng01_matrix.json` 执行 6 变体 × 3 seeds 的新实验。先核对预算与数据定义，再启动该配置。KD 变体需要同任务、同类别映射的教师 checkpoint。
 
-可以直接阅读、复用研究组织方式、方法表述和消融设计；这是研究档案的精选公开版，**尚不具备独立训练复现条件**。未附训练器、数据/标注、权重、预测缓存、样本清单及上游第三方源码。原记录中的运行命令和路径保留为历史背景；缺失依赖不会靠执行这些命令自动补齐。
+## 目录职责
 
-历史 Blueberry full254 数值属于项目 development 协议，不是社区官方 benchmark 排名。本项目没有完成“强公开 benchmark 上稳定胜出”的完整证据链；这项缺口在原报告里保留。旧报告中的 GO/STOP、预算和授权都属于当时阶段，不是要求读者照搬的通用规定。
+```text
+src/research_toolkit/     # 移植方法类、训练、数据、评价、消融
+configs/runnable/        # 可执行配置；不覆盖历史冻结配置
+tests/                   # 数值、数据和比较契约检查
+diagnostics/             # P1A–P1F 历史档案
+engineering/             # ENG01–ENG04 历史档案
+evidence/                # 文档与代码来源映射、运行验证记录
+work/                    # 本地数据与新运行输出，Git 忽略
+```
 
-发布前只做资料核对，没有重跑科研实验。检查公开文件完整性可运行 `python tools/verify_archive.py`（Python 3.10+，标准库）。详细来源、改动及未收录内容见 [发布说明](docs/PROVENANCE.md)。已明确排除的在研论文材料不在本仓库发布与许可范围内。
+原始数据、标注、权重和预测不随仓库发布；未发表项目的代码、方法与数据不进入发布范围。历史 Blueberry development 结果不等于官方公开 benchmark 排名。
 
-本仓库公开的自有文档与维护脚本采用 [MIT](LICENSE)。保留原作者与上游方法的署名；引用既有模块不改变它们的来源和许可。
+文档及独立档案维护工具保留 MIT；训练运行代码和第三方依赖适用相应许可，详见 [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md)。

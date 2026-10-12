@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/src/eng_model.py",
+      "published": "src/research_toolkit/eng01.py",
+      "source_sha256": "45e26e9544aea4dbc9cb9bd1dcc562a51f4212857be71f5a73f706f017adfe4b",
+      "published_sha256": "3b8324a608518c34f49035bd2362811b4244858ace6f538e639d0a05dd7a4c46",
+      "adaptation": "Model classes unchanged; remove machine-specific builders; package-relative imports and configuration.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/src/eng_boundary.py",
+      "published": "src/research_toolkit/boundary.py",
+      "source_sha256": "6ef2cf3bf86bb4bbd211a442c85440f9649248adb57240ae6debe3797bb23a9f",
+      "published_sha256": "5fc31b229558c9f24cc24fce7befc3080fe0fb2e771135d7871391d7923b8405",
+      "adaptation": "Boundary target/loss and augmentation hooks unchanged; package-relative config import.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/src/kd_model.py",
+      "published": "src/research_toolkit/feature_kd.py",
+      "source_sha256": "25b67df07c3e683b8d089792ae3e2d301338837a7798119b16160c723e10cc77",
+      "published_sha256": "22bd56d01e0db7e810e4e2bca142201d2aec3fe0fbde47e700cd0656c65f1b75",
+      "adaptation": "Method class bodies retained; package-relative imports. Run scheduling/path handling moved to portable runner.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/src/output_kd_model.py",
+      "published": "src/research_toolkit/output_kd.py",
+      "source_sha256": "8bd41657779c4d92894486d2fe663512a69f4602e566e347925e2bdad3e40615",
+      "published_sha256": "e1be40ddcac9fff0f4bca6aab53fc7503ddaa80a40054a70652024e3710e866f",
+      "adaptation": "Method class bodies retained; package-relative imports. Run scheduling/path handling moved to portable runner.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "engineering/eng03_instance_quality_transfer/src/combined_kd_model.py",
+      "published": "src/research_toolkit/combined_kd.py",
+      "source_sha256": "069c5629a953118c5d74a701cc15845e0b77cb9c818d012ffd6613a65104acb2",
+      "published_sha256": "44d3c249df44dc2adb704632898aabbd5563f3eaa12e1e65d1aaab83cf034438",
+      "adaptation": "Method class bodies retained; package-relative imports. Run scheduling/path handling moved to portable runner.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "engineering/eng04_problem_led_quality_transfer/src/transfer_model.py",
+      "published": "src/research_toolkit/transfer.py",
+      "source_sha256": "8f378f1dc46710e3949d4f5a85f44fdaee7f18f2d4a84e4a01605686916a69cd",
+      "published_sha256": "c06b130f56890c370ecd47e0ee4a8a82ad382ee9ea4d0ab6a0575f37755472f8",
+      "adaptation": "Method class bodies retained; package-relative imports. Run scheduling/path handling moved to portable runner.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "diagnostics/p1f_thin_prototype_attribution/factorial_model.py",
+      "published": "src/research_toolkit/factorial.py",
+      "source_sha256": "1732a26443295da3e2042e062bbcc5358c52cc36986b410cf63b31e3de5a6471",
+      "published_sha256": "3a6ee5944b02d527c2c2ea5b63a452b4d775bcf8af457e690e3cfafbd4d72c4c",
+      "adaptation": "Factorial module calculations retained; replace historical globals with portable model builder.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/references/MLCA_official.py",
+      "published": "src/research_toolkit/third_party/mlca.py",
+      "source_sha256": "c87f0e35cd5e8788e2f213d6ee953e168c06ecd269b1be797b79d10c281c49f7",
+      "published_sha256": "5e3c2243424af0a3b138191cb33333f7758801d05db940d20cd890da9f89d088",
+      "adaptation": "Upstream source retained verbatim below attribution header.",
+      "preservation": "exact_core_definition_AST"
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/references/MLCA_LICENSE.txt",
+      "published": "LICENSES/MLCA-GPL-3.0.txt",
+      "source_sha256": "7fa7e56c0db71105f4b59a6a0ac40225eb059876f85cd380383f7d7a066e68be",
+      "published_sha256": "7fa7e56c0db71105f4b59a6a0ac40225eb059876f85cd380383f7d7a066e68be",
+      "adaptation": "License text retained.",
+      "preservation": "license_text"
+    },
+    {
+      "source": "diagnostics/p1b_publishability_triage/upstream/LICENSE",
+      "published": "LICENSES/AGPL-3.0.txt",
+      "source_sha256": "e0eedba615d5cd1b986afb6c5b3a4b1ae33713e7e9dc74d19daec5e3221f9d2e",
+      "published_sha256": "0d96a4ff68ad6d4b6f1f30f713b18d5184912ba8dd389f86aa7710db079abcb0",
+      "adaptation": "License text retained.",
+      "preservation": "license_text"
+    },
+    {
+      "source": "engineering/eng01_semantic_detail_boundary/src/train_one.py",
+      "published": "src/research_toolkit/train.py",
+      "source_sha256": "0c3c01e0800f7583b2a0ad9fe328eb0c141df492201b5e0c2efc5dde4fc2fa12",
+      "published_sha256": "d62dfb188c24545a29ef7223663e8a75c08c656400cebcee8cea6b61e5b4ce00",
+      "preservation": "adapted_entrypoint",
+      "adaptation": "Portable orchestration. Inherits AdamW/augmentation recipe and final-epoch policy from ENG01/P1F and KD trainers; explicit dataset/device/class mapping, no historical queue/paths; no automatic resume; independent evaluation and deployment export."
+    },
+    {
+      "source": "engineering/eng02_scale_capacity_small_object/src/evaluate.py",
+      "published": "src/research_toolkit/evaluate.py",
+      "source_sha256": "3a5a56f5fa5be1a8f5464a750eb5fdb3ee4dad49f7d0b876a3dc7fa83cc1e4da",
+      "published_sha256": "40176b7efe2ba448bf4a82eb05daff48c5ac680d9b92585522096e74d8b4d805",
+      "preservation": "adapted_entrypoint",
+      "adaptation": "Ported COCO precision-tensor extraction, maxDets300 and native mask rendering; reconstruct GT from explicit manifest/YOLO polygons using P1B extract_clean rasterization; dynamic image/class counts, CPU support, empty-prediction support, stored replay and explicit reference-size."
+    }
+  ]
+}

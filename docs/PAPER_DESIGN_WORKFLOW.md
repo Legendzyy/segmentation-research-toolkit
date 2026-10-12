@@ -1,12 +1,12 @@
 # 从具体问题到工程论文：本项目的设计思路
 
-本页是依据原项目阶段记录和作者研究取向整理的说明，不是历史实验报告，也不增加任何实验结论。可对照原生的 [ENG01 论文主线蓝图](../engineering/eng01_semantic_detail_boundary/PAPER_MAINLINE_BLUEPRINT.md)、[ENG03 论文蓝图](../engineering/eng03_instance_quality_transfer/paper/PAPER_BLUEPRINT.md)与 [ENG04 模块组合复盘](../engineering/eng04_problem_led_quality_transfer/analysis/METHOD_COMBINATION_REASSESSMENT_20260930.md)。
+本页定义工程研究的组织原则，不增加历史实验结论。相关原件： [ENG01 论文主线蓝图](../engineering/eng01_semantic_detail_boundary/PAPER_MAINLINE_BLUEPRINT.md)、[ENG03 论文蓝图](../engineering/eng03_instance_quality_transfer/paper/PAPER_BLUEPRINT.md)与 [ENG04 模块组合复盘](../engineering/eng04_problem_led_quality_transfer/analysis/METHOD_COMBINATION_REASSESSMENT_20260930.md)。
 
 ## 主线：场景、强底座、实际问题、针对性改进
 
 工程型方法研究可以从一个具体应用场景出发，选择有说服力的 benchmark 和先进、成熟的 baseline，在真实错误上做架构或训练机制优化，再解释模块贡献与 trade-off。研究的主体是问题与解决方案，协议、日志和审计负责支撑它。
 
-作者倾向优先考察新近 YOLO 底座，例如其提出的 YOLOv8、YOLO11、YOLO26 等系列。这里列的是选型方向，不是本次重新测出的性能排名。选定时要核对任务分支、公开实现、权重、训练配方和成本：版本更新值得优先关注，任务内足够强的实际结果才确定主 baseline。历史项目里主要执行的是 YOLO11n-seg，不能将它的结果改写成更新底座的已验证效果。
+基线选型优先考察新近且成熟的同任务实现。YOLOv8、YOLO11、YOLO26 等系列属于候选范围，不构成本仓库的性能排名。选定时要核对任务分支、公开实现、权重、训练配方和成本：版本更新值得优先关注，任务内足够强的实际结果才确定主 baseline。当前可运行移植固定 YOLO11n-seg，不能将它的结果改写成更新底座的已验证效果。
 
 benchmark 应能让同行理解并复核任务难度、数据划分、指标和对照。应用数据可以支撑场景价值；是否已完成公开 benchmark 验证要另行说明。本项目的 Blueberry full254 是内部 development 评价，原生 [ENG04 资产审查](../engineering/eng04_problem_led_quality_transfer/analysis/MINIMAL_PAPER_ASSET_REVIEW.md)明确记录了强公开 benchmark、外部配对等缺口。
 

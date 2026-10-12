@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools>=70"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "segmentation-research-toolkit"
+version = "0.2.0"
+description = "Portable training and evaluation for archived segmentation research methods"
+requires-python = ">=3.10,<3.13"
+license = {text = "AGPL-3.0-or-later; documentation and standalone archive tools MIT; MLCA GPL-3.0"}
+
+[project.scripts]
+seg-research = "research_toolkit.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

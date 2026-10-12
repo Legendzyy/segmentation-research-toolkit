@@ -1,0 +1,5 @@
+{
+  "variant": "eng01:E4", "scale": "n", "epochs": 60, "batch": 8,
+  "imgsz": 640, "seed": 42, "device": "0", "workers": 2,
+  "weights": "yolo11n-seg.pt", "purpose": "new_experiment"
+}

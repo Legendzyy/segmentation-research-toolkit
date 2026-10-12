@@ -1,0 +1,10 @@
+{
+  "baseline": "p1f:F00",
+  "variants": ["p1f:F00", "p1f:F10", "p1f:F01", "p1f:F11", "p1f:CUP", "p1f:CCOMP"],
+  "seeds": [42],
+  "reference_size": 640,
+  "training": {
+    "scale": "n", "epochs": 60, "batch": 8, "imgsz": 640,
+    "device": "0", "workers": 2, "weights": "yolo11n-seg.pt", "purpose": "new_experiment"
+  }
+}

@@ -33,3 +33,7 @@ upstream/
 *.log
 *.pem
 *.key
+*.egg-info/
+build/
+dist/
+runtime/

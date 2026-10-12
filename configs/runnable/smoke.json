@@ -1,0 +1,5 @@
+{
+  "variant": "native", "scale": "n", "epochs": 1, "batch": 2,
+  "imgsz": 64, "seed": 42, "device": "cpu", "workers": 0,
+  "weights": "none", "purpose": "engineering_smoke"
+}

@@ -1,0 +1,10 @@
+{
+  "baseline": "native",
+  "variants": ["native", "eng01:E4"],
+  "seeds": [42],
+  "reference_size": 64,
+  "training": {
+    "scale": "n", "epochs": 1, "batch": 2, "imgsz": 64,
+    "device": "cpu", "workers": 0, "weights": "none", "purpose": "engineering_smoke"
+  }
+}

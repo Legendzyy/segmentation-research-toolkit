@@ -1,0 +1,10 @@
+{
+  "baseline": "eng01:E0",
+  "variants": ["eng01:E0", "eng01:E1", "eng01:E2", "eng01:E3", "eng01:E4", "eng01:E5"],
+  "seeds": [42, 128, 2024],
+  "reference_size": 640,
+  "training": {
+    "scale": "n", "epochs": 60, "batch": 8, "imgsz": 640,
+    "device": "0", "workers": 2, "weights": "yolo11n-seg.pt", "purpose": "new_experiment"
+  }
+}

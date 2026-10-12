@@ -1,0 +1,10 @@
+# Install the matching PyTorch build first; see docs/START_HERE.md.
+torch==2.5.1
+torchvision==0.20.1
+numpy==1.26.4
+opencv-python==4.10.0.84
+scipy==1.13.1
+scikit-image==0.24.0
+pycocotools==2.0.11
+PyYAML==6.0.2
+ultralytics @ https://github.com/ultralytics/ultralytics/archive/b454f423600f99d41730bd75a7a26b491187de36.zip

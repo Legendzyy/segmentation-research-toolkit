@@ -1,0 +1,422 @@
+{
+  "schema": 1,
+  "date": "2026-10-12",
+  "scope": "engineering runtime verification, not scientific method validation",
+  "platform": "Windows / CPU",
+  "python": "3.12.7",
+  "torch": "2.5.1+cpu",
+  "torchvision": "0.20.1+cpu",
+  "ultralytics": "8.4.155",
+  "upstream_commit": "b454f423600f99d41730bd75a7a26b491187de36",
+  "public_data": {
+    "name": "COCO8-seg",
+    "archive_sha256": "82c651abd01d556c77769ea834ebff1e77f76a291463e987fb69b63a87e8eb80",
+    "train_images": 4,
+    "val_images": 4
+  },
+  "unit_contract_tests": 8,
+  "core_definitions_unchanged": 18,
+  "all_methods": [
+    {
+      "variant": "native",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "f7643d0ef6b6e48b13ca28b19caf19491fa051e544e06a9f819e5de4c65c6062"
+    },
+    {
+      "variant": "eng01:E0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "7b6408922e9d1b23e9bc444b0ea68a0ffca77110aa54c8b3e43e28fb7622d177"
+    },
+    {
+      "variant": "eng01:E1",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "50fb8af85e5da2eaf1206839377c33303a790ec0c6f2effa0ebd88339d25e3a3"
+    },
+    {
+      "variant": "eng01:E2",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "74da364c83cba11914ec5f2c861e369099a58974957a15e4c2325d20d0b5958e"
+    },
+    {
+      "variant": "eng01:E3",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "32bf784f9a82ac1fe166caf74e1071dea23c7f42add7e9d94a83587e965b731f"
+    },
+    {
+      "variant": "eng01:E4",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "3cf73bf700201869d03b1434ce91f351a08d51769024858e6e212075723b5e74"
+    },
+    {
+      "variant": "eng01:E5",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "eaeea3d7e76effc23f98d6f820b1f525e356538b2f9dce06f810be7fd6a5dbbc"
+    },
+    {
+      "variant": "p1f:F00",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "f2b8ea94a20fc62fa7b8d7c32e6d33aa7fa505abff6869d06552444ea0e935dd"
+    },
+    {
+      "variant": "p1f:F10",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "5471965249b8c590c667d5e838e80107301259e690ff8361d64fb1d694dc123d"
+    },
+    {
+      "variant": "p1f:F01",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "8d1cc689b4103e6cad4315e7062e4b7b37e61e9681d36f26d0d68ce79c9011cc"
+    },
+    {
+      "variant": "p1f:F11",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "8d6152a77c40b8527d07a9ef28c107a794c059bdc0381c55fb558dd971a397bf"
+    },
+    {
+      "variant": "p1f:CUP",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "cbafa02928617dd74379c7e2873502e4c86b5f92248abb0022d6435b8692eed0"
+    },
+    {
+      "variant": "p1f:CCOMP",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "50a7ab89be61248a94968fbcea9e086a1634b05f5a6a398328ed20f1d293e8eb"
+    },
+    {
+      "variant": "eng02:K1",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "62b956bff707b68abab8328293b12582a4c10b43976f3985dadb361a0752eb30"
+    },
+    {
+      "variant": "eng02:K2",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "b534f38fa738e0bb338d7d76ea399f766d8515e0d1130a4b778eba081c6fdce9"
+    },
+    {
+      "variant": "eng03:D0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "6c7962b71c51fe451406e4181d25f2e1bbec9d6af47a5131a5b75a65fab2cf69"
+    },
+    {
+      "variant": "eng03:Q0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "07a88c9b774edc0e9da5b0a3bb814e9b09aff3bd1bc36d87c9b2f1ad977d4ab8"
+    },
+    {
+      "variant": "eng03:M0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "4cd8046d8f3152431e992afc9a967e75d7ed11644b480ec81c4ef8e4b0b23cca"
+    },
+    {
+      "variant": "eng03:C0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "4da004bb80f5a1926ba1bfce12ca58754d6b9b190e42543d8ef4a3240f23a840"
+    },
+    {
+      "variant": "eng03:R0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "947cd5f814cccbdee4534fcc66a88a863d673e229418086a6d21513b9d51b952"
+    },
+    {
+      "variant": "eng03:F0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "874a972b22d118d34c1c2bad527689c9de7a44f7c9d40d2324e37950b5cd5250"
+    },
+    {
+      "variant": "eng04:X0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "71a456adf81ee4bb425ae09cad68acb0b18effc7837df007e9c2d5410c7be5cb"
+    },
+    {
+      "variant": "eng04:I0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "ffd1cf3f31250498ad5a4c01946842d1160b0bcccc1bb73308824ea780915e23"
+    },
+    {
+      "variant": "eng04:I1",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "61a9e1dd0a5096dea668f9786763dc1664f76a5226050246020135511e998be8"
+    },
+    {
+      "variant": "eng04:J0",
+      "status": "PASS",
+      "train_epochs": 1,
+      "input_size": 64,
+      "reference_size": 64,
+      "checkpoint_sha256": "b61eb1e91ab507e4a813b38d4099559d99ad27bf092f0ab0893261e754eab630"
+    }
+  ],
+  "deployment_parity": [
+    {
+      "variant": "native",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng01:E0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng01:E1",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng01:E2",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng01:E3",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng01:E4",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng01:E5",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "p1f:F00",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "p1f:F10",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "p1f:F01",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "p1f:F11",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "p1f:CUP",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "p1f:CCOMP",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng02:K1",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng02:K2",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng03:D0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng03:Q0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng03:M0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng03:C0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng03:R0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng03:F0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng04:X0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng04:I0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng04:I1",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    },
+    {
+      "variant": "eng04:J0",
+      "status": "PASS",
+      "tensors": 9,
+      "input_size": 64,
+      "scope": "exact CPU forward parity: last-epoch EMA versus exported deployment graph"
+    }
+  ],
+  "matrix_smoke": {
+    "status": "PASS",
+    "variants": [
+      "native",
+      "eng01:E4"
+    ],
+    "paired_metric_rows": 7
+  },
+  "pretrained_prediction_path": {
+    "status": "PASS",
+    "input_size": 128,
+    "reference_size": 640,
+    "validation_images": 4,
+    "detections": 106,
+    "replay": "PASS",
+    "note": "Real pretrained prediction rendering and resize path; metrics not used as method evidence."
+  },
+  "untested": [
+    "CUDA runtime/parity",
+    "large dataset training effectiveness",
+    "historical result reproduction",
+    "MinneApple conversion",
+    "DDP/resume"
+  ]
+}

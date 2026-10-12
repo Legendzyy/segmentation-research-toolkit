@@ -17,3 +17,23 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python tools/verify_archive.py
+  runtime:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    env:
+      PYTHONIOENCODING: utf-8
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+          cache: pip
+      - run: python -m pip install torch==2.5.1 torchvision==0.20.1 --index-url https://download.pytorch.org/whl/cpu
+      - run: python -m pip install -r requirements.txt -e .
+      - run: python -m unittest discover -s tests -v
+      - run: python -m research_toolkit fetch-smoke --output work/coco8
+      - run: python -m research_toolkit matrix --config configs/runnable/smoke_matrix.json --data work/coco8/prepared/data.yaml --output work/smoke_matrix
+      - run: python -m research_toolkit replay --evaluation work/smoke_matrix/native_s42_eval
+      - run: python tools/smoke_methods.py --data work/coco8/prepared/data.yaml --output work/branch_smoke --variants eng01:E2 eng02:K2 eng03:F0 eng04:J0 p1f:F01

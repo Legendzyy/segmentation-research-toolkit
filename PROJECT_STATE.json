@@ -1,0 +1,20 @@
+{
+  "schema": 1,
+  "project": "segmentation-research-toolkit",
+  "release": "0.2.0",
+  "scope": "portable completed-stage methods and immutable research archives",
+  "read_first": ["AGENTS.md", "docs/RUNTIME.md", "CURRENT_PROGRESS.md"],
+  "entrypoint": "python -m research_toolkit",
+  "commands": ["variants", "fetch-smoke", "prepare-yolo", "train", "evaluate", "replay", "check-deploy", "matrix", "summarize"],
+  "runnable_families": ["native", "ENG01", "ENG02_KD", "ENG03_KD", "ENG04_transfer", "P1F_factorial"],
+  "archive_only": ["P1A", "P1B", "P1C", "P1D_specialization", "P1E"],
+  "data_adapter": "explicit YOLO polygon train/val with content-hashed manifest",
+  "evaluation_id": "coco-mask-reference-grid-v1",
+  "upstream_commit": "b454f423600f99d41730bd75a7a26b491187de36",
+  "validation_evidence": "evidence/RUNTIME_VALIDATION.json",
+  "checks": ["python -m unittest discover -s tests -v", "python tools/verify_archive.py"],
+  "smoke": "python -m research_toolkit matrix --config configs/runnable/smoke_matrix.json --data work/coco8/prepared/data.yaml --output work/smoke_matrix",
+  "limitations": ["no historical dataset identities or weights", "no GPU equivalence claim from CPU smoke", "no automatic resume or DDP", "MinneApple mask-to-polygon conversion not validated", "reference-grid AP is not an official leaderboard submission"],
+  "next_work": ["choose an explicit scenario, public benchmark and baseline", "prepare a new dataset manifest", "freeze a new comparison matrix before formal evaluation", "record every run and update this state with actual evidence"],
+  "publication_excludes": ["unpublished research methods/designs/data", "raw datasets", "checkpoints", "per-sample predictions", "credentials"]
+}
