@@ -5,6 +5,7 @@
 | 入口 | 内容 |
 |---|---|
 | [安装与首次运行](docs/START_HERE.md) | 在公开 COCO8-seg 上完成训练 → 评价 → 消融汇总 |
+| [新课题工作区](docs/NEW_STUDY.md) | 输入场景、数据集、算力；建立独立阶段并由 Agent 持续接续 |
 | [数据集获取与接入](docs/DATASETS.md) | Mega_Blueberry、MinneApple、COCO8-seg 的官方来源及数据角色 |
 | [方法与运行契约](docs/RUNTIME.md) | 25 个入口、配置字段、评价定义、输出与限制 |
 | [Agent 状态](PROJECT_STATE.json) / [协作规则](AGENTS.md) | 当前能力、检查命令、续接顺序 |
@@ -43,6 +44,8 @@ python -m research_toolkit replay --evaluation work/smoke_matrix/native_s42_eval
 ```text
 src/research_toolkit/     # 移植方法类、训练、数据、评价、消融
 configs/runnable/        # 可执行配置；不覆盖历史冻结配置
+studies/                 # 新课题的独立 engineering/diagnostics 阶段与接续状态
+tools/study.py           # 创建课题、增加阶段、保存 checkpoint、读取状态
 tests/                   # 数值、数据和比较契约检查
 diagnostics/             # P1A–P1F 历史档案
 engineering/             # ENG01–ENG04 历史档案

@@ -17,6 +17,7 @@ jobs:
         with:
           python-version: ${{ matrix.python }}
       - run: python tools/verify_archive.py
+      - run: python -m unittest discover -s tests -p test_study_workspace.py -v
   runtime:
     strategy:
       matrix:

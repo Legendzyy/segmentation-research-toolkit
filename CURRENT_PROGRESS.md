@@ -1,6 +1,7 @@
 # 当前状态
 
 - 发布形态：可运行方法移植 + 原生研究档案。
+- 新课题入口：`python tools/study.py init/status/stage/checkpoint`；按场景、数据集、算力创建独立 `studies/<id>/`，权威状态、阶段接续和证据 hash 随课题保存。详见 [工作区说明](docs/NEW_STUDY.md)。
 - 可执行范围：native、ENG01、ENG02 KD、ENG03 KD、ENG04 transfer、P1F factorial。
 - 数据输入：经过 manifest 验证的 YOLO polygon train/val；COCO8-seg 提供真实数据 smoke 下载。
 - 评价：参考网格 COCO mask AP、保存预测重放、严格配对汇总。

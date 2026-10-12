@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "scope": "Native-style isolated study creation and agent handoff; no training/evaluation changes",
+  "local_platform": "Windows",
+  "checks": {
+    "workspace_contract_tests": 6,
+    "full_unit_tests": 14,
+    "cli_lifecycle": [
+      "init",
+      "reject duplicate init",
+      "checkpoint",
+      "status",
+      "stage"
+    ],
+    "archive_verification": "PASS: 127 native assets unchanged"
+  },
+  "source_sha256": "bb4cfb5beb7b2ff0e58ba0fbfaa431fea3a1d00fdbc4ef7963dfec529e8be524",
+  "scientific_definitions_changed": false,
+  "limitations": [
+    "No experiment scheduler or process monitor",
+    "One sequential writer per study",
+    "Evidence hashes identify files, not scientific validity",
+    "Draft protocols require current-task scientific choices before formal comparisons"
+  ]
+}

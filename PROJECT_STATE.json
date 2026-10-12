@@ -5,6 +5,17 @@
   "scope": "portable completed-stage methods and immutable research archives",
   "read_first": ["AGENTS.md", "docs/RUNTIME.md", "CURRENT_PROGRESS.md"],
   "entrypoint": "python -m research_toolkit",
+  "study_workspace": {
+    "entrypoint": "python tools/study.py",
+    "commands": ["init", "status", "stage", "checkpoint"],
+    "input": ["scenario", "dataset", "compute"],
+    "guide": "docs/NEW_STUDY.md",
+    "validation_evidence": "evidence/STUDY_WORKSPACE_VALIDATION.json",
+    "root": "studies/<id>",
+    "state": "STUDY_STATE.json",
+    "initial_stage": "engineering/eng00_baseline",
+    "contract": "one sequential writer per study; no automatic experiment execution or scientific choices"
+  },
   "commands": ["variants", "fetch-smoke", "prepare-yolo", "train", "evaluate", "replay", "check-deploy", "matrix", "summarize"],
   "runnable_families": ["native", "ENG01", "ENG02_KD", "ENG03_KD", "ENG04_transfer", "P1F_factorial"],
   "archive_only": ["P1A", "P1B", "P1C", "P1D_specialization", "P1E"],

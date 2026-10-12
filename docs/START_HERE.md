@@ -1,5 +1,7 @@
 # 安装与首次运行
 
+开展自己的课题时，先按[新课题工作区](NEW_STUDY.md)提供场景、数据集和算力，由 Agent 创建独立阶段。以下安装与工程检查可在协议尚未确定时先完成；新课题输出使用自己的 `work/<study>/` 路径。
+
 ## 环境
 
 Python 3.10–3.12，Git。测试运行使用 Python 3.12、PyTorch 2.5.1 / torchvision 0.20.1 CPU。模型内部 API 固定到 Ultralytics commit `b454f423600f99d41730bd75a7a26b491187de36`，不要替换为任意最新版。
