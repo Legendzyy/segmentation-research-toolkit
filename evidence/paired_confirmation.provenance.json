@@ -1,0 +1,33 @@
+{
+  "source_relative_path": "engineering/eng04_problem_led_quality_transfer/analysis/confirm_j0_v1/PAIR_TABLE.csv",
+  "source_sha256": "a32767a7f51c8f5d9d3b8a5a353e77ea01616961e87566073c3ff5aa11031572",
+  "published_sha256": "2cb2c764aa1106675afb49bbe39d969264f9d612c03a68e865db57d1e7e59efc",
+  "rows": 4,
+  "transform": "Keep all four rows. Copy listed numeric and protocol columns verbatim. Derive model labels by removing the final _s<seed> suffix; keep seed separately. No sample-level data.",
+  "columns": [
+    "candidate",
+    "reference",
+    "seed",
+    "AP",
+    "reference_AP",
+    "dataset",
+    "schedule",
+    "checkpoint_rule",
+    "evaluator",
+    "evidence_role"
+  ],
+  "omitted_columns": [
+    "AP75",
+    "AP90",
+    "small_AP",
+    "delta_pp",
+    "delta_AP75_pp",
+    "delta_AP90_pp",
+    "delta_small_AP_pp",
+    "reference_AP75",
+    "reference_AP90",
+    "reference_small_AP",
+    "comparability_note"
+  ],
+  "omission_reason": "This minimal example verifies primary mask AP pairing; secondary endpoints remain in private historical evidence. Their omission is not a claim that they passed."
+}

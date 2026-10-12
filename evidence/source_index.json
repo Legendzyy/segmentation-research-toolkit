@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-12",
+  "verification_scope": "source_bytes_hashed_not_historical_experiments_rerun",
+  "sources": [
+    {
+      "source_relative_path": "diagnostics/p1a_coef_refit/README.md",
+      "sha256": "84147d5ac23d373e3dda4ea2c4f92cc02a31910df3e790723c6d48fe694f6f7f",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1b_publishability_triage/README.md",
+      "sha256": "e8750a042ade592940042e0351b1a7fef2fd8180165b2323fdb935c497ee390b",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1b_publishability_triage/NUMERIC_CONTRACT.md",
+      "sha256": "749206aa674ac0af26ffcb6cc0f906e30f4373f8bde10b214e9ec63554bbd0c5",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1c_objective_alignment/README.md",
+      "sha256": "d0f1b097541bd4efcfbe0633c0a2f18cfe69069bb8a916bd86ef89d553ef9ae1",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1d_engineering_qualification/README.md",
+      "sha256": "16b9544ea611a4e595c616c37eeabd81f0f96f685e5c4ddb5c531000bf283dab",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1d_engineering_qualification/QUALIFICATION_RESULTS.md",
+      "sha256": "ccd9c26167597fe1e26d5b949e799827afda56bd9d270fefeba9f2711fd5067a",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1e_structural_bottleneck_triage/README_P1E.md",
+      "sha256": "50c76097cb1813d5e31817b5de6e2705be39f775507a71d402be330dd835f1c5",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1e_structural_bottleneck_triage/PROTOCOL_P1E.md",
+      "sha256": "b9d2cd06280f4dd373e30a446af395f68b99f801a7da572df141a7924663a91d",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1f_thin_prototype_attribution/README_P1F.md",
+      "sha256": "97c0af6089ecb47f81f693293004347e00d1593cb833dc52efa9ac4cb7ba0cc9",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "diagnostics/p1f_thin_prototype_attribution/FACTORIAL_IMPLEMENTATION_CONTRACT.md",
+      "sha256": "3b1dff11fc857be8780d937d05a9574a9b52313f6ac76dbca718e092bdb84e5e",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng01_semantic_detail_boundary/README.md",
+      "sha256": "b7fe557256c03ee0c1e0f4c1217b0e40466208b95eb046ecf875d74eeae66226",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng02_scale_capacity_small_object/README.md",
+      "sha256": "88edd074d8f8a1818d65ba890039cddb18aa2d0315c87377672fe2ae67ee4435",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng03_instance_quality_transfer/README.md",
+      "sha256": "50a260ff83eb4148667714b130658fae4de28c8bbdc2c9ad3d787e16a99cd3ab",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng04_problem_led_quality_transfer/README.md",
+      "sha256": "ba0101166084c402c4a76bb97646f327396a2eb2737f09ef957171a890d33cfd",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng04_problem_led_quality_transfer/METHOD_SPEC.md",
+      "sha256": "13fc940783381d880400c3c0f5a038086f5d558e2ef290a388f65207f753206d",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng04_problem_led_quality_transfer/analysis/MINIMAL_PAPER_ASSET_REVIEW.md",
+      "sha256": "4d6dc579fa27cac70c508663a774b26d5aa250a78a0aa96a2105d595ac1eb1d0",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng04_problem_led_quality_transfer/analysis/METHOD_COMBINATION_REASSESSMENT_20260930.md",
+      "sha256": "d750b2535184dea89586c9c763f1294dcae799c3e6062dc757c86a3976858c6f",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng04_problem_led_quality_transfer/analysis/CONFIRM_J0_V1_DECISION.md",
+      "sha256": "be0f2b7f442b9b40c9328b2e0aa6ceb2d8cd96086e964da69a9c8f4899dfb1e7",
+      "role": "historical_document_not_bundled"
+    },
+    {
+      "source_relative_path": "engineering/eng04_problem_led_quality_transfer/analysis/confirm_j0_v1/PAIR_TABLE.csv",
+      "sha256": "a32767a7f51c8f5d9d3b8a5a353e77ea01616961e87566073c3ff5aa11031572",
+      "role": "historical_document_not_bundled"
+    }
+  ]
+}
